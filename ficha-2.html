@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Inglés">
+<meta name="theme-color" content="#2747c9">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Ficha 2 · Be y presente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: cuaderno de ejercicios, una columna de lectura, corrección en "boli rojo" */
+:root{
+  --paper:#fbfaf6; --sheet:#ffffff; --ink:#1d2433; --muted:#5e6678; --line:#dfe2ea;
+  --accent:#2747c9; --accent-soft:#e8ecfb; --ok:#1f7a4a; --ok-soft:#e3f3ea; --bad:#c42b2b; --bad-soft:#fbe7e6;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --ok:#5fd093; --ok-soft:#173326; --bad:#ff7d74; --bad-soft:#3a1d1d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --ok:#5fd093; --ok-soft:#173326; --bad:#ff7d74; --bad-soft:#3a1d1d; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 64px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,4vw,2.3rem);line-height:1.1;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:6px 0 0}
+.score{font-family:var(--display);font-variant-numeric:tabular-nums;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:8px 14px;text-align:right}
+.score b{font-size:1.5rem;color:var(--accent)}
+.score small{display:block;color:var(--muted);font-family:var(--body);font-size:.8rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);display:flex;gap:6px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:22px}
+nav a{font-size:.88rem;text-decoration:none;color:var(--ink);padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--sheet)}
+nav a:hover,nav a:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+h2{font-family:var(--display);font-weight:700;font-size:1.35rem;margin:36px 0 12px;scroll-margin-top:70px}
+h2 span{color:var(--accent)}
+.ex{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;margin-bottom:16px}
+.ex h3{font-size:1rem;margin:0 0 12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.ex h3 .res{font-variant-numeric:tabular-nums;font-weight:700}
+.res.good{color:var(--ok)} .res.mid{color:var(--accent)} .res.low{color:var(--bad)}
+ol{margin:0;padding-left:1.6em;display:grid;gap:10px}
+li{padding-left:4px}
+li .src{color:var(--muted);font-style:italic;display:block;font-size:.95rem}
+input[type=text]{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--line);padding:0 4px;min-width:5ch;width:7ch;border-radius:0}
+input.long{display:block;width:100%;margin-top:4px;border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--paper)}
+input:focus{outline:none;border-color:var(--accent)}
+input.ok{border-color:var(--ok);color:var(--ok);background:var(--ok-soft)}
+input.bad{border-color:var(--bad);color:var(--bad);background:var(--bad-soft);text-decoration:line-through;text-decoration-thickness:1px}
+.choice{display:inline-flex;flex-wrap:wrap;gap:4px;vertical-align:baseline}
+.tip p{margin:10px 0 0}
+.tbl{overflow-x:auto}
+.tip table{border-collapse:collapse;width:100%;font-size:.92rem}
+.tip th,.tip td{text-align:left;padding:4px 10px;border-bottom:1px solid var(--line)}
+.tip th{font-weight:700;color:var(--accent)}
+.choice button{font:inherit;font-size:.95rem;padding:1px 9px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;cursor:pointer}
+.choice button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:700}
+.choice button:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.choice.ok button[aria-pressed="true"]{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.choice.bad button[aria-pressed="true"]{background:var(--bad-soft);border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.fix{color:var(--bad);font-size:.9rem;font-weight:700;margin-left:6px}
+.fix.block{display:block;margin:4px 0 0}
+.actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.btn{font:inherit;font-size:.92rem;font-weight:700;padding:7px 16px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--sheet);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.tip{background:var(--accent-soft);border-radius:10px;padding:12px 16px;font-size:.95rem;margin-bottom:16px}
+footer{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+@media (prefers-reduced-motion:no-preference){input,.choice button{transition:background .15s,border-color .15s}}
+.volver{display:none;font-size:.95rem;color:var(--accent);text-decoration:none;margin-bottom:12px}
+@media (display-mode: standalone){.volver{display:inline-block}}
+.refrescar{display:none;position:fixed;z-index:20;top:calc(env(safe-area-inset-top, 0px) + 10px);right:calc(env(safe-area-inset-right, 0px) + 12px);
+  font:inherit;font-size:.9rem;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);color:var(--accent);cursor:pointer}
+.refrescar:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (display-mode: standalone){.refrescar{display:block}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a class="volver" href="./">‹ Todas las fichas</a>
+  <header>
+    <div>
+      <h1>Ficha 2 · <i>Be</i> y presente</h1>
+      <p class="sub">Unidades 1–7. Frases de tienda y de viaje. Escribe las respuestas y pulsa <b>Corregir</b>.</p>
+    </div>
+    <div class="score" aria-live="polite"><b id="total">0 / 0</b><small>aciertos corregidos</small></div>
+  </header>
+  <nav id="nav" aria-label="Secciones"></nav>
+  <main id="app"></main>
+  <footer>
+    <button class="btn" id="checkAll" type="button">Corregir todo</button>
+    <button class="btn ghost" id="resetAll" type="button">Borrar todo</button>
+  </footer>
+</div>
+
+<script>
+// ___ = hueco de texto · {a|b} = elegir opción · long:true = escribir la frase entera
+// Contexto: dependienta de Zara y viajes
+const SECTIONS = [
+ {id:"u1", title:"1 · am / is / are", ex:[
+  {t:"1.1 Completa con am, is o are", items:[
+   ["The fitting rooms ___ on the left. <span class=src>(probadores)</span>",[["are"]]],
+   ["This T-shirt ___ in the sale. <span class=src>(rebajado)</span>",[["is"]]],
+   ["Hi! I ___ Laura. Can I help you?",[["am"]]],
+   ["Your receipt ___ in the bag. <span class=src>(ticket de compra)</span>",[["is"]]],
+   ["These jeans ___ a size 38.",[["are"]]],
+   ["Our flight ___ at 10:30.",[["is"]]],
+   ["We ___ at gate B12. <span class=src>(puerta de embarque)</span>",[["are"]]],
+   ["My passport ___ in my suitcase.",[["is"]]],
+   ["The train tickets ___ very expensive.",[["are"]]]]},
+  {t:"1.2 Pasa a negativa (forma corta)", long:true, items:[
+   ["The shop is open on Sunday.",["The shop isn't open on Sunday"]],
+   ["These shoes are cheap.",["These shoes aren't cheap"]],
+   ["I am at the till.",["I'm not at the till"]],
+   ["The train is on time.",["The train isn't on time"]],
+   ["We are at the hotel.",["We aren't at the hotel"]],
+   ["The fitting room is free.",["The fitting room isn't free"]]]},
+  {t:"1.3 ¿Cómo se dice? Elige", items:[
+   ["(Tengo hambre) {I have hungry|I'm hungry}.",["I'm hungry"]],
+   ["(Tengo 25 años) {I have 25|I'm 25}.",["I'm 25"]],
+   ["(Llegamos tarde al vuelo) {We're late|We have late} for the flight.",["We're late"]],
+   ["(Tengo frío en el avión) {I have cold|I'm cold} on the plane.",["I'm cold"]],
+   ["(Tengo sed) {I'm thirsty|I have thirsty}.",["I'm thirsty"]],
+   ["(Aquí tiene su ticket) {Here's|There's} your receipt.",["Here's"]]]}]},
+
+ {id:"u2", title:"2 · Preguntas con be", ex:[
+  {t:"2.1 Ordena la pregunta", long:true, items:[
+   ["is / where / the fitting room",["Where is the fitting room"]],
+   ["these trousers / in the sale / are",["Are these trousers in the sale"]],
+   ["the gate / is / open",["Is the gate open"]],
+   ["how much / this jacket / is",["How much is this jacket"]],
+   ["you / are / from England",["Are you from England"]],
+   ["your hotel / is / near the beach",["Is your hotel near the beach"]],
+   ["what size / you / are",["What size are you"]]]},
+  {t:"2.2 Respuesta corta", items:[
+   ["Is this dress in the sale? → Yes, ___.",[["it is"]]],
+   ["Are you ready to pay? → No, ___.",[["I'm not"]]],
+   ["Is the fitting room free? → No, ___.",[["it isn't"]]],
+   ["Are your bags heavy? → Yes, ___.",[["they are"]]],
+   ["Is the train on time? → No, ___.",[["it isn't"]]],
+   ["Are you on holiday? → Yes, ___.",[["I am","we are"]]]]},
+  {t:"2.3 Elige la palabra interrogativa", items:[
+   ["{Where|What|How much} are the toilets? — Next to the lift.",["Where"]],
+   ["{What|Where|How much} are these shoes? — €39.95.",["How much"]],
+   ["{Who|What|How old} is the manager? — Marta. She's over there.",["Who"]],
+   ["{What|Where|Why} time is the flight? — At 7 a.m.",["What"]],
+   ["{Where|How|Why} are you from? — I'm from Italy.",["Where"]],
+   ["{How|What|Who} is your hotel? — It's great!",["How"]],
+   ["{Why|Where|What} is the shop closed? — It's a holiday.",["Why"]]]}]},
+
+ {id:"u3", title:"3 · Presente continuo", ex:[
+  {t:"3.1 Escribe la forma -ing", items:[
+   ["fold → ___ <span class=src>(doblar)</span>",[["folding"]]],["try → ___",[["trying"]]],["pay → ___",[["paying"]]],
+   ["shop → ___",[["shopping"]]],["write → ___",[["writing"]]],["take → ___",[["taking"]]],
+   ["sit → ___",[["sitting"]]],["get → ___",[["getting"]]],["leave → ___",[["leaving"]]],["travel → ___",[["travelling","traveling"]]]]},
+  {t:"3.2 Completa con am/is/are + -ing", items:[
+   ["I ___ the clothes. <span class=src>(fold)</span>",[["am folding"]]],
+   ["The customer ___ on a dress. <span class=src>(try)</span>",[["is trying"]]],
+   ["We ___ for the bus. <span class=src>(wait)</span>",[["are waiting"]]],
+   ["Sorry, I ___ another customer. <span class=src>(help)</span>",[["am helping"]]],
+   ["Look! It ___. Take an umbrella. <span class=src>(rain)</span>",[["is raining"]]],
+   ["They ___ at the till now. <span class=src>(pay)</span>",[["are paying"]]],
+   ["She ___ a blue coat. <span class=src>(wear)</span>",[["is wearing"]]]]},
+  {t:"3.3 Completa en negativa", items:[
+   ["The card machine ___. <span class=src>(not work)</span>",[["isn't working"]]],
+   ["I ___ anything, thanks. I'm just looking. <span class=src>(not buy)</span>",[["am not buying"]]],
+   ["We ___ at a hotel. We're staying with friends. <span class=src>(not stay)</span>",[["aren't staying"]]],
+   ["The lift ___. Please use the stairs. <span class=src>(not work)</span>",[["isn't working"]]]]}]},
+
+ {id:"u4", title:"4 · Preguntas en continuo", ex:[
+  {t:"4.1 Escribe la pregunta", long:true, items:[
+   ["you / look for / something?",["Are you looking for something","Are you looking for anything"]],
+   ["Where / you / go / on holiday?",["Where are you going on holiday"]],
+   ["the customer / wait / for the fitting room?",["Is the customer waiting for the fitting room"]],
+   ["What / you / do / here?",["What are you doing here"]],
+   ["your friends / stay / at a hotel?",["Are your friends staying at a hotel"]],
+   ["Why / the plane / wait?",["Why is the plane waiting"]]]},
+  {t:"4.2 Respuesta corta", items:[
+   ["Are you waiting for the fitting room? → Yes, ___.",[["I am"]]],
+   ["Is it raining in London? → No, ___.",[["it isn't"]]],
+   ["Are the passengers boarding now? → Yes, ___.",[["they are"]]],
+   ["Is Marta working today? → No, ___.",[["she isn't"]]]]}]},
+
+ {id:"u5", title:"5 · Presente simple", ex:[
+  {t:"5.1 Escribe el verbo con -s, -es o -ies", items:[
+   ["The shop ___ at 10 p.m. <span class=src>(close)</span>",[["closes"]]],
+   ["This bag ___ €29. <span class=src>(cost)</span>",[["costs"]]],
+   ["The train ___ at 8:15. <span class=src>(leave)</span>",[["leaves"]]],
+   ["My sister ___ to London every month. <span class=src>(fly)</span>",[["flies"]]],
+   ["My shift ___ at 4 o'clock. <span class=src>(finish)</span> <span class=src>(turno)</span>",[["finishes"]]],
+   ["The hotel ___ a swimming pool. <span class=src>(have)</span>",[["has"]]],
+   ["This bus ___ to the airport. <span class=src>(go)</span>",[["goes"]]],
+   ["The security guard ___ the door. <span class=src>(watch)</span>",[["watches"]]],
+   ["She ___ the prices every morning. <span class=src>(check)</span>",[["checks"]]]]},
+  {t:"5.2 Elige la forma correcta", items:[
+   ["I {work|works} at Zara. My sister {work|works} at Mango.",["work","works"]],
+   ["The fitting rooms {close|closes} at 9:45.",["close"]],
+   ["This shirt {come|comes} in three colours.",["comes"]],
+   ["We {sell|sells} jeans and jackets.",["sell"]],
+   ["The flight {take|takes} two hours.",["takes"]]]},
+  {t:"5.3 Pon el adverbio en su sitio", long:true, items:[
+   ["We have a sale in January. (always)",["We always have a sale in January"]],
+   ["I work on Sundays. (never)",["I never work on Sundays"]],
+   ["Customers pay by card. (usually)",["Customers usually pay by card"]],
+   ["I travel by train. (often)",["I often travel by train"]],
+   ["The shop is busy on Saturdays. (always)",["The shop is always busy on Saturdays"]],
+   ["She takes the bus to work. (sometimes)",["She sometimes takes the bus to work","Sometimes she takes the bus to work"]]]}]},
+
+ {id:"u6", title:"6 · Negativa: don't / doesn't", ex:[
+  {t:"6.1 Completa con don't o doesn't", items:[
+   ["Sorry, we ___ have this in a size 44.",[["don't"]]],
+   ["This jacket ___ come in black.",[["doesn't"]]],
+   ["I ___ work on Mondays.",[["don't"]]],
+   ["The hotel ___ have a restaurant.",[["doesn't"]]],
+   ["They ___ accept cash.",[["don't"]]],
+   ["The bus ___ stop here.",[["doesn't"]]]]},
+  {t:"6.2 Pasa a negativa", long:true, items:[
+   ["We sell shoes here.",["We don't sell shoes here"]],
+   ["The shop opens on Sunday.",["The shop doesn't open on Sunday"]],
+   ["This dress fits me.",["This dress doesn't fit me"]],
+   ["The price includes breakfast.",["The price doesn't include breakfast"]],
+   ["I speak French.",["I don't speak French"]],
+   ["The train has wifi.",["The train doesn't have wifi"]]]},
+  {t:"6.3 Corrige el error", long:true, items:[
+   ["This T-shirt don't fit.",["This T-shirt doesn't fit"]],
+   ["She doesn't speaks English.",["She doesn't speak English"]],
+   ["We not accept cheques.",["We don't accept cheques"]],
+   ["The hotel doesn't has parking.",["The hotel doesn't have parking"]]]}]},
+
+ {id:"u7", title:"7 · Preguntas: Do / Does", ex:[
+  {t:"7.1 Completa con Do o Does", items:[
+   ["___ you need a bag?",[["do"]]],["___ this jacket come in blue?",[["does"]]],
+   ["___ you have this in a smaller size?",[["do"]]],["___ the shop open on Sundays?",[["does"]]],
+   ["How much ___ it cost?",[["does"]]],["What time ___ the flight leave?",[["does"]]],
+   ["Where ___ you want to go?",[["do"]]],["___ you accept cards?",[["do"]]]]},
+  {t:"7.2 Escribe la pregunta", long:true, items:[
+   ["you / want / a receipt?",["Do you want a receipt"]],
+   ["this shirt / come / in white?",["Does this shirt come in white"]],
+   ["you / have / a booking?",["Do you have a booking"]],
+   ["What time / the shop / close?",["What time does the shop close"]],
+   ["Where / the bus / stop?",["Where does the bus stop"]],
+   ["How much / a ticket / cost?",["How much does a ticket cost"]],
+   ["the room / have / a balcony?",["Does the room have a balcony"]]]},
+  {t:"7.3 Respuesta corta", items:[
+   ["Do you need any help? → No, ___. I'm just looking.",[["I don't"]]],
+   ["Does the hotel have wifi? → Yes, ___.",[["it does"]]],
+   ["Do you take cards? → Yes, ___.",[["we do"]]],
+   ["Does this train stop in Girona? → No, ___.",[["it doesn't"]]],
+   ["Do your friends speak English? → Yes, ___.",[["they do"]]]]},
+  {t:"7.4 Mezcla: ¿Am / Is / Are o Do / Does?", items:[
+   ["___ you looking for something?",[["are"]]],["___ you want to try it on?",[["do"]]],
+   ["___ the fitting room free?",[["is"]]],["___ this bus go to the city centre?",[["does"]]],
+   ["___ the train leaving now?",[["is"]]],["___ you on holiday?",[["are"]]],
+   ["What ___ you do? — I'm a shop assistant.",[["do"]]],["Where ___ the toilets?",[["are"]]],
+   ["Where ___ your sister work?",[["does"]]],["___ it raining?",[["is"]]]]},
+  {t:"7.5 Corrige el error", long:true, items:[
+   ["Do you are tired?",["Are you tired"]],
+   ["Are you like this dress?",["Do you like this dress"]],
+   ["Does she working today?",["Is she working today","Does she work today"]],
+   ["Where the fitting room is?",["Where is the fitting room"]],
+   ["What time the shop opens?",["What time does the shop open"]],
+   ["Is the bus go to the airport?",["Does the bus go to the airport","Is the bus going to the airport"]]]}]}
+];
+
+const norm = s => (" " + s.toLowerCase() + " ").replace(/[’`´]/g,"'")
+  .replace(/\bcan't\b|\bcannot\b/g,"can not").replace(/n't\b/g," not").replace(/'m\b/g," am").replace(/'re\b/g," are").replace(/'s\b/g," is")
+  .replace(/[.,!?¿¡]/g," ").replace(/\s+/g," ").trim();
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const app = document.getElementById("app"), nav = document.getElementById("nav");
+const results = new Map();
+app.innerHTML = ""; nav.innerHTML = "";
+let uid = 0;
+
+SECTIONS.forEach(sec => {
+  nav.insertAdjacentHTML("beforeend", `<a href="#${sec.id}">${sec.title}</a>`);
+  const h = document.createElement("h2"); h.id = sec.id; h.textContent = sec.title;
+  app.append(h);
+  sec.ex.forEach(ex => {
+    const box = document.createElement("section"); box.className = "ex";
+    box.innerHTML = `<h3><span>${ex.t}</span><span class="res" aria-live="polite"></span></h3><ol></ol>
+      <div class="actions"><button class="btn" type="button" data-a="check">Corregir</button><button class="btn ghost" type="button" data-a="reset">Borrar</button></div>`;
+    const ol = box.querySelector("ol"); const gaps = [];
+    ex.items.forEach(([tpl, ans]) => {
+      const li = document.createElement("li");
+      if (ex.long) {
+        const id = "g" + (++uid);
+        li.innerHTML = `<label for="${id}">${esc(tpl)}</label><input class="long" type="text" id="${id}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">`;
+        gaps.push({kind:"text", el: li.querySelector("input"), ok: ans, show: ans[0] + (/^(do|does|are|is|am|can|where|what|how|who|why)\b/i.test(ans[0]) ? "?" : ".")});
+      } else {
+        let i = 0;
+        li.innerHTML = tpl.replace(/___|\{([^}]+)\}/g, (m, opts) => {
+          const id = "g" + (++uid);
+          if (m === "___") return `<input type="text" id="${id}" data-i="${i++}" aria-label="Hueco" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">`;
+          return `<span class="choice" role="group" id="${id}" data-i="${i++}">${opts.split("|").map(o=>`<button type="button" aria-pressed="false">${o}</button>`).join("")}</span>`;
+        });
+        li.querySelectorAll("[data-i]").forEach(el => {
+          const a = ans[+el.dataset.i];
+          if (el.tagName === "INPUT") {
+            el.style.width = Math.max(5, a[0].length + 2) + "ch";
+            gaps.push({kind:"text", el, ok: a, show: a[0]});
+          } else {
+            gaps.push({kind:"choice", el, ok: a, show: a});
+            el.addEventListener("click", e => {
+              const b = e.target.closest("button"); if (!b) return;
+              el.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+            });
+          }
+        });
+      }
+      ol.append(li);
+    });
+    const res = box.querySelector(".res");
+    const clearMarks = () => { box.querySelectorAll(".fix").forEach(f=>f.remove()); gaps.forEach(g=>g.el.classList.remove("ok","bad")); res.textContent=""; res.className="res"; };
+    const check = () => {
+      clearMarks(); let good = 0;
+      gaps.forEach(g => {
+        let right;
+        if (g.kind === "text") right = g.ok.some(o => norm(o) === norm(g.el.value));
+        else { const p = g.el.querySelector('[aria-pressed="true"]'); right = !!p && p.textContent === g.ok; }
+        g.el.classList.add(right ? "ok" : "bad");
+        if (right) good++;
+        else g.el.insertAdjacentHTML("afterend", `<span class="fix${g.el.classList.contains("long") ? " block" : ""}">→ ${esc(g.show)}</span>`);
+      });
+      const r = good / gaps.length;
+      res.textContent = `${good} / ${gaps.length}`; res.classList.add(r === 1 ? "good" : r >= .5 ? "mid" : "low");
+      results.set(box, [good, gaps.length]); updateTotal();
+    };
+    const reset = () => { clearMarks(); gaps.forEach(g => g.kind === "text" ? g.el.value = "" : g.el.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed","false"))); results.delete(box); updateTotal(); };
+    box.querySelector('[data-a="check"]').onclick = check;
+    box.querySelector('[data-a="reset"]').onclick = reset;
+    box.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.tagName === "INPUT") check(); });
+    box._check = check; box._reset = reset;
+    app.append(box);
+  });
+});
+function updateTotal(){ let g=0,t=0; results.forEach(([a,b])=>{g+=a;t+=b}); document.getElementById("total").textContent = `${g} / ${t}`; }
+document.getElementById("checkAll").onclick = () => document.querySelectorAll(".ex").forEach(b => b._check());
+document.getElementById("resetAll").onclick = () => document.querySelectorAll(".ex").forEach(b => b._reset());
+</script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
+<button class="refrescar" type="button" onclick="location.reload()" aria-label="Actualizar la página">↻ Actualizar</button>
+</body>
+</html>
