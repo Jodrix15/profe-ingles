@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Inglés">
+<meta name="theme-color" content="#2747c9">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Teoría · Unidades 1–7</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: apuntes de clase en una columna; cada bloque dice a qué unidad del libro corresponde */
+:root{
+  --paper:#fbfaf6; --sheet:#ffffff; --ink:#1d2433; --muted:#5e6678; --line:#dfe2ea;
+  --accent:#2747c9; --accent-soft:#e8ecfb; --bad:#c42b2b; --ok:#1f7a4a;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --bad:#ff7d74; --ok:#5fd093; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --bad:#ff7d74; --ok:#5fd093; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding:0 16px}
+.wrap{max-width:720px;margin:0 auto;padding-block:max(28px,env(safe-area-inset-top)) 64px}
+.volver{display:none;font-size:.95rem;color:var(--accent);text-decoration:none;margin-bottom:12px}
+@media (display-mode: standalone){.volver{display:inline-block}}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,4vw,2.3rem);line-height:1.1;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:6px 0 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);display:flex;gap:6px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--line);margin:18px 0 8px}
+nav a{font-size:.88rem;text-decoration:none;color:var(--ink);padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--sheet)}
+nav a:hover,nav a:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+section{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:18px 18px 8px;margin-top:18px;scroll-margin-top:70px}
+h2{font-family:var(--display);font-weight:700;font-size:1.3rem;margin:0 0 4px}
+.para{display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.02em;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:2px 10px;margin-bottom:10px}
+h3{font-size:1rem;margin:16px 0 6px}
+p{margin:0 0 12px;max-width:65ch}
+ul{margin:0 0 12px;padding-left:1.2em}
+li{margin-bottom:4px}
+.tbl{overflow-x:auto;margin:0 0 14px}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--accent);font-weight:700;white-space:nowrap}
+td b{color:var(--ink)}
+.no{color:var(--bad);text-decoration:line-through}
+.si{color:var(--ok);font-weight:700}
+.ej{font-style:italic}
+.formula{font-family:var(--display);font-weight:700;font-size:1.1rem;background:var(--accent-soft);color:var(--accent);border-radius:8px;padding:8px 12px;margin:0 0 14px;display:inline-block}
+.refrescar{display:none;position:fixed;z-index:20;top:calc(env(safe-area-inset-top, 0px) + 10px);right:calc(env(safe-area-inset-right, 0px) + 12px);
+  font:inherit;font-size:.9rem;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);color:var(--accent);cursor:pointer}
+.refrescar:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (display-mode: standalone){.refrescar{display:block}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="volver" href="./">‹ Todas las fichas</a>
+  <h1>Teoría · Unidades 1–7</h1>
+  <p class="sub">Resumen de las unidades 1 a 7 de <i>Essential Grammar in Use</i>: el verbo <i>to be</i>, el presente continuo y el presente simple.</p>
+
+  <nav aria-label="Unidades">
+    <a href="#u1">1 · am/is/are</a><a href="#u2">2 · Preguntas be</a><a href="#u3">3 · I am doing</a>
+    <a href="#u4">4 · Are you doing?</a><a href="#u5">5 · I work</a><a href="#u6">6 · I don't</a><a href="#u7">7 · Do you…?</a>
+  </nav>
+
+  <section id="u1">
+    <h2><i>am / is / are</i> (ser y estar)</h2>
+    <span class="para">Unidad 1</span>
+    <p><b>To be</b> significa a la vez <b>ser</b> y <b>estar</b>. Tiene tres formas en presente y casi siempre se usa contraído.</p>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Afirmativa</th><th>Negativa</th></tr></thead>
+      <tbody>
+        <tr><th>I</th><td>I <b>am</b> (I'm)</td><td>I <b>am not</b> (I'm not)</td></tr>
+        <tr><th>he / she / it</th><td>he <b>is</b> (he's)</td><td>he <b>is not</b> (he's not / he isn't)</td></tr>
+        <tr><th>we / you / they</th><td>we <b>are</b> (we're)</td><td>we <b>are not</b> (we're not / we aren't)</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li>Ejemplos: <span class="ej">I'm tired. · Laura is a doctor. · My keys are on the table.</span></li>
+      <li>Negativa: <span class="ej">He isn't a teacher. He's a student.</span> <span class="ej">They aren't English.</span></li>
+      <li><b>I'm not</b> solo tiene una forma: <span class="no">I amn't</span> → <span class="si">I'm not</span>.</li>
+      <li>Muchas personas o cosas = <i>they</i> → <b>are</b>: <span class="ej">Ann and I are friends.</span></li>
+    </ul>
+    <h3>Ojo: en español es "tener", en inglés es <i>to be</i></h3>
+    <ul>
+      <li>Edad: <span class="si">I'm 32</span> (years old) — <span class="no">I have 32</span>.</li>
+      <li><span class="ej">be hungry</span> (tener hambre) · <span class="ej">be thirsty</span> (sed) · <span class="ej">be cold / hot</span> (frío / calor) · <span class="ej">be scared of</span> (tener miedo de) · <span class="ej">be late</span> (llegar tarde).</li>
+    </ul>
+    <h3>Contracciones útiles</h3>
+    <p><b>that's</b> = that is · <b>there's</b> = there is · <b>here's</b> = here is. <span class="ej">That's very kind of you. · Here's your key.</span></p>
+  </section>
+
+  <section id="u2">
+    <h2>Preguntas con <i>am / is / are</i></h2>
+    <span class="para">Unidad 2</span>
+    <p>Para preguntar, el verbo se pone <b>delante del sujeto</b>. No hace falta <i>do</i>.</p>
+    <p class="formula">Am / Is / Are + sujeto + resto?</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Afirmativa</th><th>Pregunta</th></tr></thead>
+      <tbody>
+        <tr><td>I am late.</td><td><b>Am I</b> late?</td></tr>
+        <tr><td>She is at home.</td><td><b>Is she</b> at home?</td></tr>
+        <tr><td>Your shoes are new.</td><td><b>Are your shoes</b> new?</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li>El sujeto entero va junto, detrás del verbo: <span class="si">Is your mother at home?</span> — <span class="no">Is at home your mother?</span></li>
+    </ul>
+    <h3>Con palabras interrogativas</h3>
+    <p><b>Where</b> (dónde) · <b>What</b> (qué) · <b>Who</b> (quién) · <b>How</b> (cómo) · <b>How old</b> (cuántos años) · <b>How much</b> (cuánto cuesta) · <b>Why</b> (por qué). Van al principio:</p>
+    <ul>
+      <li><span class="ej">Where are you from? — Canada.</span></li>
+      <li><span class="ej">How old is Joe? — He's 24.</span></li>
+      <li><span class="ej">What colour is your car? — It's red.</span></li>
+      <li>Se contraen con <i>is</i>: <b>what's, who's, where's, how's</b>. <span class="ej">What's your name? · Where's Lucy?</span></li>
+    </ul>
+    <h3>Respuestas cortas</h3>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Sí</th><th>No</th></tr></thead>
+      <tbody>
+        <tr><th>I</th><td>Yes, I am.</td><td>No, I'm not.</td></tr>
+        <tr><th>he / she / it</th><td>Yes, she is.</td><td>No, she isn't. / No, she's not.</td></tr>
+        <tr><th>we / you / they</th><td>Yes, they are.</td><td>No, they aren't. / No, they're not.</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li>En el "sí" <b>no se contrae</b>: <span class="no">Yes, I'm.</span> → <span class="si">Yes, I am.</span> <span class="no">Yes, he's.</span> → <span class="si">Yes, he is.</span></li>
+    </ul>
+  </section>
+
+  <section id="u3">
+    <h2>Presente continuo: <i>I am doing</i></h2>
+    <span class="para">Unidad 3</span>
+    <p>Sirve para lo que está pasando <b>ahora mismo</b>, en este momento. Equivale a "estar + -ando/-iendo": <span class="ej">I'm working</span> = estoy trabajando.</p>
+    <p class="formula">am / is / are + verbo-ing</p>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Afirmativa</th><th>Negativa</th></tr></thead>
+      <tbody>
+        <tr><th>I</th><td>I<b>'m</b> eat<b>ing</b>.</td><td>I<b>'m not</b> eat<b>ing</b>.</td></tr>
+        <tr><th>he / she / it</th><td>She<b>'s</b> read<b>ing</b>.</td><td>She <b>isn't</b> read<b>ing</b>.</td></tr>
+        <tr><th>we / you / they</th><td>They<b>'re</b> play<b>ing</b>.</td><td>They <b>aren't</b> play<b>ing</b>.</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li>Hacen falta las <b>dos partes</b>: <span class="no">I working</span> → <span class="si">I'm working</span>. <span class="no">She is work</span> → <span class="si">She is working</span>.</li>
+      <li>Pistas de "ahora": <i>now, at the moment, Look!, Listen!, Be quiet!</i> <span class="ej">Be quiet! The baby is sleeping.</span></li>
+    </ul>
+    <h3>Cómo se escribe el -ing</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Regla</th><th>Ejemplos</th></tr></thead>
+      <tbody>
+        <tr><td>Normal: + <b>-ing</b></td><td>work → working · read → reading</td></tr>
+        <tr><td>Acaba en <b>-e</b>: se quita la e</td><td>come → coming · write → writing · dance → dancing</td></tr>
+        <tr><td>Vocal + consonante final: se dobla</td><td>run → running · sit → sitting · swim → swimming</td></tr>
+        <tr><td>Acaba en <b>-ie</b>: → <b>-ying</b></td><td>lie → lying · die → dying</td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section id="u4">
+    <h2>Preguntas en presente continuo: <i>are you doing?</i></h2>
+    <span class="para">Unidad 4</span>
+    <p>Igual que en la unidad 2: <i>am/is/are</i> pasa delante del sujeto y el verbo en -ing se queda detrás.</p>
+    <p class="formula">(Where / What…) + am / is / are + sujeto + verbo-ing?</p>
+    <ul>
+      <li><span class="ej">Is it raining? — Yes, take an umbrella.</span></li>
+      <li><span class="ej">What are you doing? — I'm studying.</span></li>
+      <li><span class="ej">Where is she going?</span> · <span class="ej">Why are you wearing a coat?</span></li>
+      <li>El sujeto no se separa: <span class="si">Is Ben working today?</span> — <span class="no">Is working Ben today?</span> · <span class="si">Where are those people going?</span> — <span class="no">Where are going those people?</span></li>
+    </ul>
+    <h3>Respuestas cortas</h3>
+    <p>Las mismas que con <i>to be</i>, sin el -ing: <span class="ej">Are you going now? — Yes, I am. / No, I'm not.</span> <span class="ej">Is Ben working? — Yes, he is. / No, he isn't.</span></p>
+  </section>
+
+  <section id="u5">
+    <h2>Presente simple: <i>I work / she works</i></h2>
+    <span class="para">Unidad 5</span>
+    <p>Sirve para <b>cosas que son verdad en general</b> y para <b>hábitos</b> (lo que haces siempre, a menudo, cada día). <span class="ej">I like big cities. · Tom works very hard. · The earth goes round the sun.</span></p>
+    <div class="tbl"><table>
+      <thead><tr><th>I / you / we / they</th><th>he / she / it</th></tr></thead>
+      <tbody>
+        <tr><td>work</td><td>work<b>s</b></td></tr>
+        <tr><td>live</td><td>live<b>s</b></td></tr>
+        <tr><td>watch</td><td>watch<b>es</b></td></tr>
+        <tr><td>study</td><td>stud<b>ies</b></td></tr>
+        <tr><td>have</td><td><b>has</b></td></tr>
+        <tr><td>do / go</td><td><b>does / goes</b></td></tr>
+      </tbody></table></div>
+    <h3>La regla de oro: he / she / it → -s</h3>
+    <ul>
+      <li><span class="ej">I work in a shop. My brother work<b>s</b> in a bank.</span> — <span class="no">My brother work</span></li>
+      <li><b>-es</b> después de -s, -sh, -ch, -x, -o: <span class="ej">pass → passes · finish → finishes · watch → watches · go → goes</span></li>
+      <li>Consonante + <b>-y</b> → <b>-ies</b>: <span class="ej">study → studies · try → tries</span>. Pero vocal + y → solo -s: <span class="ej">play → plays</span>.</li>
+      <li>Irregular: <b>have → has</b>. <span class="ej">Joe has a shower every day.</span></li>
+    </ul>
+    <h3>Adverbios de frecuencia</h3>
+    <p><b>always</b> (siempre) · <b>usually</b> (normalmente) · <b>often</b> (a menudo) · <b>sometimes</b> (a veces) · <b>never</b> (nunca). Van <b>delante del verbo</b>:</p>
+    <ul>
+      <li><span class="si">Sue always gets up early.</span> — <span class="no">Sue gets always up early.</span></li>
+      <li><span class="si">I never eat breakfast.</span> — <span class="no">I eat never breakfast.</span></li>
+      <li>Con <i>to be</i> van detrás: <span class="ej">She is always late.</span></li>
+    </ul>
+  </section>
+
+  <section id="u6">
+    <h2>Negativa en presente simple: <i>I don't…</i></h2>
+    <span class="para">Unidad 6</span>
+    <p>Para negar se pone <b>don't / doesn't</b> delante del verbo, y el verbo va <b>siempre en su forma básica</b> (sin -s).</p>
+    <p class="formula">sujeto + don't / doesn't + verbo</p>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Afirmativa</th><th>Negativa</th></tr></thead>
+      <tbody>
+        <tr><th>I / you / we / they</th><td>I drink coffee.</td><td>I <b>don't</b> drink coffee.</td></tr>
+        <tr><th>he / she / it</th><td>She drink<b>s</b> coffee.</td><td>She <b>doesn't</b> drink coffee.</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li><b>don't</b> = do not · <b>doesn't</b> = does not.</li>
+      <li>La -s se la lleva <i>does</i>: <span class="no">She doesn't speaks Italian</span> → <span class="si">She doesn't speak Italian</span>. <span class="no">He doesn't has</span> → <span class="si">He doesn't have</span>.</li>
+      <li>Con he/she/it nunca <i>don't</i>: <span class="no">Fred don't like me</span> → <span class="si">Fred doesn't like me</span>. <span class="no">My car don't use</span> → <span class="si">My car doesn't use</span>.</li>
+      <li>Si el verbo es <i>do</i>, sale dos veces: <span class="si">David doesn't do his job very well.</span> — <span class="no">David doesn't his job</span>.</li>
+      <li>No se niega con <i>not</i> solo: <span class="no">I not like</span> → <span class="si">I don't like</span>.</li>
+    </ul>
+  </section>
+
+  <section id="u7">
+    <h2>Preguntas en presente simple: <i>Do you…?</i></h2>
+    <span class="para">Unidad 7</span>
+    <p>Se pone <b>Do / Does</b> delante del sujeto. Igual que en la negativa, el verbo va sin -s.</p>
+    <p class="formula">(Where / What…) + do / does + sujeto + verbo?</p>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Afirmativa</th><th>Pregunta</th></tr></thead>
+      <tbody>
+        <tr><th>I / you / we / they</th><td>You play the guitar.</td><td><b>Do</b> you play the guitar?</td></tr>
+        <tr><th>he / she / it</th><td>Chris work<b>s</b> on Sundays.</td><td><b>Does</b> Chris work on Sundays?</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li><span class="ej">Where do your parents live? · What does this word mean? · How much does it cost?</span></li>
+      <li><span class="no">Does she plays?</span> → <span class="si">Does she play?</span> · <span class="no">Like you music?</span> → <span class="si">Do you like music?</span></li>
+      <li>Con <i>always / usually</i>: van detrás del sujeto: <span class="ej">What do you usually do at weekends?</span></li>
+      <li><b>What do you do?</b> = ¿a qué te dedicas? <span class="ej">— I work in a bank.</span></li>
+    </ul>
+    <h3>Respuestas cortas</h3>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Sí</th><th>No</th></tr></thead>
+      <tbody>
+        <tr><th>I / you / we / they</th><td>Yes, I do.</td><td>No, I don't.</td></tr>
+        <tr><th>he / she / it</th><td>Yes, he does.</td><td>No, he doesn't.</td></tr>
+      </tbody></table></div>
+    <h3>¿Do o be? Regla rápida</h3>
+    <p>Si la frase lleva <i>am / is / are</i> (también en presente continuo), ese verbo hace la pregunta y la negativa. Si no, se usa <i>do / does</i>.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Con to be</th><th>Con otro verbo</th></tr></thead>
+      <tbody>
+        <tr><td><b>Are</b> you tired?</td><td><b>Do</b> you like music?</td></tr>
+        <tr><td><b>Is</b> she working now?</td><td><b>Does</b> she work here?</td></tr>
+        <tr><td>He <b>isn't</b> at home.</td><td>He <b>doesn't</b> live here.</td></tr>
+      </tbody></table></div>
+    <p><span class="no">Do you are tired?</span> · <span class="no">Are you like music?</span> · <span class="no">Does she working?</span> — nunca se mezclan.</p>
+  </section>
+</div>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
+<button class="refrescar" type="button" onclick="location.reload()" aria-label="Actualizar la página">↻ Actualizar</button>
+</body>
+</html>
