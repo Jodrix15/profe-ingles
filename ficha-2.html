@@ -85,7 +85,7 @@ footer{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
   <header>
     <div>
       <h1>Ficha 2 · <i>Be</i> y presente</h1>
-      <p class="sub">Unidades 1–7. Frases de tienda y de viaje. Escribe las respuestas y pulsa <b>Corregir</b>.</p>
+      <p class="sub">Unidades 1–7 y repaso de la ficha 1. Frases de tienda y de viaje. Escribe las respuestas y pulsa <b>Corregir</b>.</p>
     </div>
     <div class="score" aria-live="polite"><b id="total">0 / 0</b><small>aciertos corregidos</small></div>
   </header>
@@ -263,7 +263,53 @@ const SECTIONS = [
    ["Does she working today?",["Is she working today","Does she work today"]],
    ["Where the fitting room is?",["Where is the fitting room"]],
    ["What time the shop opens?",["What time does the shop open"]],
-   ["Is the bus go to the airport?",["Does the bus go to the airport","Is the bus going to the airport"]]]}]}
+   ["Is the bus go to the airport?",["Does the bus go to the airport","Is the bus going to the airport"]]]}]},
+ {id:"u8", title:"8 · Repaso: fichas 1 y 2", ex:[
+  {t:"8.1 Elige las opciones correctas", items:[
+   ["Excuse me, {is|are} this {your|yours} bag?",["is","your"]],
+   ["{She|Her} {work|works} at Zara. I see {she|her} every day.",["She","works","her"]],
+   ["These shoes {is|are} {my|mine}.",["are","mine"]],
+   ["Our flight {is|are} late. {It|Its} gate is B12.",["is","Its"]],
+   ["My sister and {I|me} {is|are} on holiday.",["I","are"]],
+   ["Can you help {we|us}? We {am|are} lost.",["us","are"]],
+   ["{Is|Does} {he|him} like {his|her} new job? — Yes, he loves it.",["Does","he","his"]],
+   ["The customer {is|does} trying on a dress. {She|Her} wants a smaller size.",["is","She"]],
+   ["{Do|Does} {they|them} accept cards at {their|theirs} hotel?",["Do","they","their"]]]},
+  {t:"8.2 Completa (sin opciones)", items:[
+   ["This isn't my receipt. ___ is in my bag.",[["mine"]]],
+   ["Marta isn't here today. ___ ___ on Sundays. <span class=src>(not work)</span>",[["she"],["doesn't work"]]],
+   ["Excuse me, ___ these your sunglasses? — Yes, they're ___. Thank you!",[["are"],["mine"]]],
+   ["The hotel is nice, but ___ restaurant ___ on Mondays. <span class=src>(not open)</span>",[["its"],["doesn't open"]]],
+   ["We ___ for ___ taxi. <span class=src>(wait · nuestro)</span>",[["are waiting"],["our"]]],
+   ["___ your friends speak Spanish? — No, ___.",[["do"],["they don't"]]],
+   ["Peter is at the airport. I'm calling ___ now.",[["him"]]],
+   ["The customers ___ at the till. Can you help ___? <span class=src>(pay)</span>",[["are paying"],["them"]]],
+   ["Is this jacket ___? <span class=src>(de ella)</span> — Yes, it's ___ jacket.",[["hers"],["her"]]],
+   ["___ you have this in ___ size? <span class=src>(mi)</span>",[["do"],["my"]]]]},
+  {t:"8.3 Traduce al inglés", long:true, items:[
+   ["¿Este bolso es tuyo?",["Is this bag yours"]],
+   ["Mi hermana trabaja en Zara.",["My sister works at Zara","My sister works in Zara"]],
+   ["Ella no habla inglés.",["She doesn't speak English"]],
+   ["¿Dónde está nuestra puerta de embarque?",["Where is our gate","Where is our boarding gate"]],
+   ["Estamos esperando a nuestros amigos.",["We are waiting for our friends"]],
+   ["¿Tienen esta camiseta en azul?",["Do you have this T-shirt in blue","Do you have this t shirt in blue","Do you have this tshirt in blue"]],
+   ["Él no está trabajando hoy.",["He isn't working today"]],
+   ["¿Les gusta su hotel? (a ellos)",["Do they like their hotel"]]]},
+  {t:"8.4 Reescribe con pronombres", long:true, items:[
+   ["Laura is helping the customers.",["She is helping them"]],
+   ["Tom doesn't like Anna's dress.",["He doesn't like her dress"]],
+   ["Are the tickets for you and me?",["Are they for us"]],
+   ["My friends and I are visiting Peter's family.",["We are visiting his family"]],
+   ["Does Marta know the manager? (un hombre)",["Does she know him"]],
+   ["The bags are Laura's.",["They are hers"]]]},
+  {t:"8.5 Corrige el error", long:true, items:[
+   ["This bag is my.",["This bag is mine"]],
+   ["Her doesn't work here.",["She doesn't work here"]],
+   ["Is they your suitcases?",["Are they your suitcases"]],
+   ["My brother live in London and he work in a hotel.",["My brother lives in London and he works in a hotel"]],
+   ["The hotel is famous for it's views.",["The hotel is famous for its views"]],
+   ["Are you know him?",["Do you know him"]],
+   ["Do you can help me?",["Can you help me"]]]}]}
 ];
 
 const norm = s => (" " + s.toLowerCase() + " ").replace(/[’`´]/g,"'")
