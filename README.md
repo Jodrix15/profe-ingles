@@ -33,3 +33,7 @@ Abre la web en el móvil y elige **Añadir a la pantalla de inicio**. Funciona c
 2. Añade su enlace en `index.html`, en la sección que le toque.
 3. Añádelo a la lista `FILES` de `sw.js` y sube el número de `CACHE` (`fichas-v8` → `fichas-v9`) para que funcione sin conexión y se actualice.
 4. Haz commit y push a `main`.
+
+---
+
+🤖 Desarrollado con ayuda de [Claude](https://claude.ai) como asistente de programación.
