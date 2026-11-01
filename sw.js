@@ -1,6 +1,6 @@
 // Guarda las fichas para usarlas sin conexión y las actualiza en segundo plano cuando hay internet.
-const CACHE = "fichas-v8";
-const FILES = ["./", "index.html", "ficha-ingles.html", "ficha-2.html", "examen-nivel.html", "teoria-1.html", "teoria-2.html", "vocabulario.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png"];
+const CACHE = "fichas-v9";
+const FILES = ["./", "index.html", "ficha-ingles.html", "ficha-2.html", "ficha-3.html", "examen-nivel.html", "teoria-1.html", "teoria-2.html", "teoria-3.html", "vocabulario.html", "vocabulario-3.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));

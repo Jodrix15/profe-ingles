@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Inglés">
+<meta name="theme-color" content="#2747c9">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Ficha 3 · Presentes y was/were</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: cuaderno de ejercicios, una columna de lectura, corrección en "boli rojo" */
+:root{
+  --paper:#fbfaf6; --sheet:#ffffff; --ink:#1d2433; --muted:#5e6678; --line:#dfe2ea;
+  --accent:#2747c9; --accent-soft:#e8ecfb; --ok:#1f7a4a; --ok-soft:#e3f3ea; --bad:#c42b2b; --bad-soft:#fbe7e6;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --ok:#5fd093; --ok-soft:#173326; --bad:#ff7d74; --bad-soft:#3a1d1d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --ok:#5fd093; --ok-soft:#173326; --bad:#ff7d74; --bad-soft:#3a1d1d; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 64px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,4vw,2.3rem);line-height:1.1;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:6px 0 0}
+.score{font-family:var(--display);font-variant-numeric:tabular-nums;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:8px 14px;text-align:right}
+.score b{font-size:1.5rem;color:var(--accent)}
+.score small{display:block;color:var(--muted);font-family:var(--body);font-size:.8rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);display:flex;gap:6px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:22px}
+nav a{font-size:.88rem;text-decoration:none;color:var(--ink);padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--sheet)}
+nav a:hover,nav a:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+h2{font-family:var(--display);font-weight:700;font-size:1.35rem;margin:36px 0 12px;scroll-margin-top:70px}
+h2 span{color:var(--accent)}
+.ex{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;margin-bottom:16px}
+.ex h3{font-size:1rem;margin:0 0 12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.ex h3 .res{font-variant-numeric:tabular-nums;font-weight:700}
+.res.good{color:var(--ok)} .res.mid{color:var(--accent)} .res.low{color:var(--bad)}
+ol{margin:0;padding-left:1.6em;display:grid;gap:10px}
+li{padding-left:4px}
+li .src{color:var(--muted);font-style:italic;display:block;font-size:.95rem}
+input[type=text]{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--line);padding:0 4px;min-width:5ch;width:7ch;border-radius:0}
+input.long{display:block;width:100%;margin-top:4px;border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--paper)}
+input:focus{outline:none;border-color:var(--accent)}
+input.ok{border-color:var(--ok);color:var(--ok);background:var(--ok-soft)}
+input.bad{border-color:var(--bad);color:var(--bad);background:var(--bad-soft);text-decoration:line-through;text-decoration-thickness:1px}
+.choice{display:inline-flex;flex-wrap:wrap;gap:4px;vertical-align:baseline}
+.tip p{margin:10px 0 0}
+.tbl{overflow-x:auto}
+.tip table{border-collapse:collapse;width:100%;font-size:.92rem}
+.tip th,.tip td{text-align:left;padding:4px 10px;border-bottom:1px solid var(--line)}
+.tip th{font-weight:700;color:var(--accent)}
+.choice button{font:inherit;font-size:.95rem;padding:1px 9px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;cursor:pointer}
+.choice button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:700}
+.choice button:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.choice.ok button[aria-pressed="true"]{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.choice.bad button[aria-pressed="true"]{background:var(--bad-soft);border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.fix{color:var(--bad);font-size:.9rem;font-weight:700;margin-left:6px}
+.fix.block{display:block;margin:4px 0 0}
+.actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.btn{font:inherit;font-size:.92rem;font-weight:700;padding:7px 16px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--sheet);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.tip{background:var(--accent-soft);border-radius:10px;padding:12px 16px;font-size:.95rem;margin-bottom:16px}
+footer{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+@media (prefers-reduced-motion:no-preference){input,.choice button{transition:background .15s,border-color .15s}}
+.volver{display:none;font-size:.95rem;color:var(--accent);text-decoration:none;margin-bottom:12px}
+@media (display-mode: standalone){.volver{display:inline-block}}
+.refrescar{display:none;position:fixed;z-index:20;top:calc(env(safe-area-inset-top, 0px) + 10px);right:calc(env(safe-area-inset-right, 0px) + 12px);
+  font:inherit;font-size:.9rem;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);color:var(--accent);cursor:pointer}
+.refrescar:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (display-mode: standalone){.refrescar{display:block}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a class="volver" href="./">‹ Todas las fichas</a>
+  <header>
+    <div>
+      <h1>Ficha 3 · Presentes y <i>was / were</i></h1>
+      <p class="sub">Unidades 8 y 10. Frases de tienda y del día a día. Escribe las respuestas y pulsa <b>Corregir</b>.</p>
+    </div>
+    <div class="score" aria-live="polite"><b id="total">0 / 0</b><small>aciertos corregidos</small></div>
+  </header>
+  <nav id="nav" aria-label="Secciones"></nav>
+  <main id="app"></main>
+  <footer>
+    <button class="btn" id="checkAll" type="button">Corregir todo</button>
+    <button class="btn ghost" id="resetAll" type="button">Borrar todo</button>
+  </footer>
+</div>
+
+<script>
+// ___ = hueco de texto · {a|b} = elegir opción · long:true = escribir la frase entera
+// Contexto: dependienta de Zara y vida diaria
+const SECTIONS = [
+ {id:"u8", title:"8 · I am doing / I do", ex:[
+  {t:"8.1 ¿Ahora o en general? Elige", items:[
+   ["Be quiet, please. The manager {talks|is talking} on the phone.",["is talking"]],
+   ["I {work|am working} at Zara from Monday to Friday.",["work"]],
+   ["Look! That man {takes|is taking} a jacket without paying!",["is taking"]],
+   ["We usually {close|are closing} at 10 p.m.",["close"]],
+   ["Can you help me? I {look|am looking} for a black dress.",["am looking"]],
+   ["The shop {gets|is getting} very busy on Saturdays. <span class=src>(se llena)</span>",["gets"]],
+   ["My sister can't answer the phone. She {has|is having} a shower.",["is having"]],
+   ["What {do you usually do|are you usually doing} after work?",["do you usually do"]],
+   ["Where's Ana? — She {folds|is folding} T-shirts in the stockroom. <span class=src>(almacén)</span>",["is folding"]],
+   ["It {rains|is raining} a lot in Galicia.",["rains"]]]},
+  {t:"8.2 Completa con am/is/are o do/does/don't/doesn't", items:[
+   ["___ you need a bigger size?",[["do"]]],
+   ["Why ___ you laughing?",[["are"]]],
+   ["The card machine ___ working. Can you pay in cash?",[["isn't","is not"]]],
+   ["What ___ your brother do? — He's a cook.",[["does"]]],
+   ["I ___ wear dresses very often.",[["don't"]]],
+   ["Hurry up! The bus ___ leaving.",[["is"]]],
+   ["This jacket ___ come in green, sorry.",[["doesn't"]]],
+   ["___ the customer still waiting for the fitting room?",[["is"]]],
+   ["We ___ open on Sundays.",[["don't"]]],
+   ["Look, Marta ___ wearing the new uniform.",[["is"]]]]},
+  {t:"8.3 Pon el verbo en presente continuo o presente simple", items:[
+   ["Excuse me, ___ for something? <span class=src>(you / look)</span>",[["are you looking"]]],
+   ["The shop ___ at 10 every morning. <span class=src>(open)</span>",[["opens"]]],
+   ["Sorry, I ___ another customer at the moment. <span class=src>(serve)</span>",[["am serving"]]],
+   ["___ by card or in cash? <span class=src>(you / usually / pay)</span>",[["do you usually pay"]]],
+   ["I ___ the bus to work every day. <span class=src>(take)</span>",[["take"]]],
+   ["Shh! The baby ___. <span class=src>(sleep)</span>",[["is sleeping"]]],
+   ["What ___? — I'm sending a message to my mum. <span class=src>(you / do)</span>",[["are you doing"]]],
+   ["Ana usually ___ at the till, but today she ___ in the stockroom. <span class=src>(work · work)</span>",[["works"],["is working"]]],
+   ["My boyfriend ___ coffee. He ___ tea. <span class=src>(not like · prefer)</span>",[["doesn't like"],["prefers"]]],
+   ["I ___ the new jeans on the shelves now. <span class=src>(put)</span>",[["am putting"]]],
+   ["How often ___ the shop window? <span class=src>(you / change)</span> <span class=src>(escaparate)</span>",[["do you change"]]]]},
+  {t:"8.4 Verbos que no van en -ing: elige", items:[
+   ["I {want|am wanting} to try this on.",["want"]],
+   ["{Do you know|Are you knowing} where the fitting rooms are?",["Do you know"]],
+   ["Sorry, I {don't understand|am not understanding}. Can you speak slowly?",["don't understand"]],
+   ["This customer {needs|is needing} a smaller size.",["needs"]],
+   ["I {don't remember|am not remembering} her name.",["don't remember"]],
+   ["{Do you like|Are you liking} this colour?",["Do you like"]],
+   ["What {does this word mean|is this word meaning}?",["does this word mean"]],
+   ["I {prefer|am preferring} the blue one.",["prefer"]]]},
+  {t:"8.5 Corrige el error", long:true, items:[
+   ["I'm wanting a coffee.",["I want a coffee"]],
+   ["Please be quiet. I work.",["Please be quiet. I'm working"]],
+   ["She is working at Zara every Saturday.",["She works at Zara every Saturday"]],
+   ["Are you understanding me?",["Do you understand me"]],
+   ["Look! The customer leaves without her bag.",["Look! The customer is leaving without her bag"]],
+   ["Do you wait for the fitting room?",["Are you waiting for the fitting room"]],
+   ["He doesn't knowing the price.",["He doesn't know the price"]]]},
+  {t:"8.6 Traduce al inglés", long:true, items:[
+   ["Estoy buscando unos vaqueros.",["I'm looking for some jeans","I'm looking for jeans","I'm looking for a pair of jeans"]],
+   ["Trabajo en Zara los sábados.",["I work at Zara on Saturdays","I work in Zara on Saturdays"]],
+   ["¿Qué estás haciendo?",["What are you doing"]],
+   ["No entiendo esta palabra.",["I don't understand this word"]],
+   ["Ella normalmente lleva vestidos, pero hoy lleva vaqueros.",["She usually wears dresses, but today she's wearing jeans","She usually wears dresses but today she is wearing jeans"]],
+   ["¿Necesita una bolsa?",["Do you need a bag"]],
+   ["Está lloviendo. Coge un paraguas.",["It's raining. Take an umbrella"]]]}]},
+
+ {id:"u10", title:"10 · was / were", ex:[
+  {t:"10.1 Presente (am/is/are) o pasado (was/were)", items:[
+   ["Today the shop ___ quiet, but yesterday it ___ very busy.",[["is"],["was"]]],
+   ["I ___ very tired last night.",[["was"]]],
+   ["Where ___ you at 8 o'clock this morning?",[["were"]]],
+   ["These jeans ___ €29.95 last week. Now they ___ €19.95.",[["were"],["are"]]],
+   ["___ you hungry? Do you want a sandwich?",[["are"]]],
+   ["Last year my sister ___ 20, so she ___ 21 now.",[["was"],["is"]]],
+   ["This time last year I ___ in London.",[["was"]]],
+   ["Where ___ the new T-shirts? They ___ here five minutes ago.",[["are"],["were"]]],
+   ["When I ___ a child, I ___ scared of the dark.",[["was"],["was"]]]]},
+  {t:"10.2 Completa con was/were o wasn't/weren't", items:[
+   ["The customers ___ happy. The fitting rooms ___ dirty and the queue ___ very long.",[["weren't"],["were"],["was"]]],
+   ["Ana ___ at work yesterday because she ___ ill.",[["wasn't"],["was"]]],
+   ["Yesterday ___ a holiday, so the shops ___ closed.",[["was"],["were"]]],
+   ["___ you at the party on Saturday? — No, I ___. I ___ at work.",[["were"],["wasn't"],["was"]]],
+   ["My keys ___ in my bag this morning, but they're not there now.",[["were"]]],
+   ["The film ___ very good. It ___ boring.",[["wasn't"],["was"]]],
+   ["The jeans ___ expensive. They ___ only €25.",[["weren't"],["were"]]]]},
+  {t:"10.3 Ordena la pregunta", long:true, items:[
+   ["late / why / you / were / this morning",["Why were you late this morning"]],
+   ["the shop / busy / was / yesterday",["Was the shop busy yesterday"]],
+   ["where / you / were / last night",["Where were you last night"]],
+   ["how much / these shoes / were",["How much were these shoes"]],
+   ["your holiday / how / was",["How was your holiday"]],
+   ["at work / Ana and Marta / were / on Sunday",["Were Ana and Marta at work on Sunday"]],
+   ["the weather / was / nice / in Paris",["Was the weather nice in Paris"]],
+   ["born / where / you / were",["Where were you born"]]]},
+  {t:"10.4 Respuesta corta", items:[
+   ["Was the shop busy today? → Yes, ___.",[["it was"]]],
+   ["Were you at work yesterday? → No, ___.",[["I wasn't"]]],
+   ["Was Ana in the stockroom? → Yes, ___.",[["she was"]]],
+   ["Were the customers happy? → No, ___.",[["they weren't"]]],
+   ["Was the jacket expensive? → No, ___.",[["it wasn't"]]],
+   ["Were you and your friends at the beach? → Yes, ___.",[["we were"]]]]},
+  {t:"10.5 Pasa la frase al pasado", long:true, items:[
+   ["The shop is very busy today. (yesterday)",["The shop was very busy yesterday","Yesterday the shop was very busy"]],
+   ["I'm tired. (last night)",["I was tired last night","Last night I was tired"]],
+   ["The fitting rooms aren't free. (an hour ago)",["The fitting rooms weren't free an hour ago","An hour ago the fitting rooms weren't free"]],
+   ["Are you at home? (last night)",["Were you at home last night"]],
+   ["Marta isn't at work today. (on Monday)",["Marta wasn't at work on Monday","On Monday Marta wasn't at work"]],
+   ["Where are the new dresses? (yesterday)",["Where were the new dresses yesterday"]],
+   ["The trousers are in the sale. (last week)",["The trousers were in the sale last week","Last week the trousers were in the sale"]]]},
+  {t:"10.6 Traduce al inglés", long:true, items:[
+   ["Ayer estaba muy cansada.",["I was very tired yesterday","Yesterday I was very tired"]],
+   ["¿Dónde estabas anoche?",["Where were you last night"]],
+   ["Las camisetas no eran caras.",["The T-shirts weren't expensive","The T shirts weren't expensive","The tshirts weren't expensive"]],
+   ["Nací en Barcelona.",["I was born in Barcelona"]],
+   ["¿Qué tal tu fin de semana?",["How was your weekend"]],
+   ["La tienda estaba cerrada el domingo.",["The shop was closed on Sunday","The store was closed on Sunday"]],
+   ["Cuando era niña, tenía miedo de los perros.",["When I was a child, I was scared of dogs","When I was a child I was afraid of dogs","When I was a girl, I was scared of dogs","When I was a girl I was afraid of dogs"]]]}]},
+
+ {id:"rep", title:"Repaso · 8 y 10", ex:[
+  {t:"R.1 Elige las opciones correctas", items:[
+   ["Yesterday the shop {is|was} very busy, but today it {is|was} quiet.",["was","is"]],
+   ["I {work|am working} today, but I {wasn't|weren't} at work yesterday.",["am working","wasn't"]],
+   ["{Do|Are|Were} you at home last night?",["Were"]],
+   ["Where {was|were} you born? — I {was|am} born in Seville.",["were","was"]],
+   ["{Is|Does|Was} the customer still waiting? — Yes, she's over there.",["Is"]],
+   ["My friends {was|were} on holiday last week. Now they {are|were} back at work.",["were","are"]],
+   ["{Do you want|Are you wanting} a bag?",["Do you want"]],
+   ["How {is|was} your weekend? — It {is|was} great, thanks!",["was","was"]],
+   ["{Are|Do} you know where Ana is? — She {has|is having} a break.",["Do","is having"]]]},
+  {t:"R.2 Corrige el error", long:true, items:[
+   ["I were at work yesterday.",["I was at work yesterday"]],
+   ["Was you tired last night?",["Were you tired last night"]],
+   ["I born in Valencia.",["I was born in Valencia"]],
+   ["The customer is needing help.",["The customer needs help"]],
+   ["We are closing at 10 p.m. every day.",["We close at 10 p.m. every day","We close at 10 pm every day"]],
+   ["The jeans was in the sale last week.",["The jeans were in the sale last week"]]]}]}
+];
+const norm = s => (" " + s.toLowerCase() + " ").replace(/[’`´]/g,"'")
+  .replace(/\bcan't\b|\bcannot\b/g,"can not").replace(/n't\b/g," not").replace(/'m\b/g," am").replace(/'re\b/g," are").replace(/'s\b/g," is")
+  .replace(/[.,!?¿¡]/g," ").replace(/\s+/g," ").trim();
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const app = document.getElementById("app"), nav = document.getElementById("nav");
+const results = new Map();
+app.innerHTML = ""; nav.innerHTML = "";
+let uid = 0;
+
+SECTIONS.forEach(sec => {
+  nav.insertAdjacentHTML("beforeend", `<a href="#${sec.id}">${sec.title}</a>`);
+  const h = document.createElement("h2"); h.id = sec.id; h.textContent = sec.title;
+  app.append(h);
+  sec.ex.forEach(ex => {
+    const box = document.createElement("section"); box.className = "ex";
+    box.innerHTML = `<h3><span>${ex.t}</span><span class="res" aria-live="polite"></span></h3><ol></ol>
+      <div class="actions"><button class="btn" type="button" data-a="check">Corregir</button><button class="btn ghost" type="button" data-a="reset">Borrar</button></div>`;
+    const ol = box.querySelector("ol"); const gaps = [];
+    ex.items.forEach(([tpl, ans]) => {
+      const li = document.createElement("li");
+      if (ex.long) {
+        const id = "g" + (++uid);
+        li.innerHTML = `<label for="${id}">${esc(tpl)}</label><input class="long" type="text" id="${id}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">`;
+        gaps.push({kind:"text", el: li.querySelector("input"), ok: ans, show: ans[0] + (/^(do|does|are|is|am|was|were|can|where|what|how|who|why)\b/i.test(ans[0]) ? "?" : ".")});
+      } else {
+        let i = 0;
+        li.innerHTML = tpl.replace(/___|\{([^}]+)\}/g, (m, opts) => {
+          const id = "g" + (++uid);
+          if (m === "___") return `<input type="text" id="${id}" data-i="${i++}" aria-label="Hueco" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">`;
+          return `<span class="choice" role="group" id="${id}" data-i="${i++}">${opts.split("|").map(o=>`<button type="button" aria-pressed="false">${o}</button>`).join("")}</span>`;
+        });
+        li.querySelectorAll("[data-i]").forEach(el => {
+          const a = ans[+el.dataset.i];
+          if (el.tagName === "INPUT") {
+            el.style.width = Math.max(5, a[0].length + 2) + "ch";
+            gaps.push({kind:"text", el, ok: a, show: a[0]});
+          } else {
+            gaps.push({kind:"choice", el, ok: a, show: a});
+            el.addEventListener("click", e => {
+              const b = e.target.closest("button"); if (!b) return;
+              el.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+            });
+          }
+        });
+      }
+      ol.append(li);
+    });
+    const res = box.querySelector(".res");
+    const clearMarks = () => { box.querySelectorAll(".fix").forEach(f=>f.remove()); gaps.forEach(g=>g.el.classList.remove("ok","bad")); res.textContent=""; res.className="res"; };
+    const check = () => {
+      clearMarks(); let good = 0;
+      gaps.forEach(g => {
+        let right;
+        if (g.kind === "text") right = g.ok.some(o => norm(o) === norm(g.el.value));
+        else { const p = g.el.querySelector('[aria-pressed="true"]'); right = !!p && p.textContent === g.ok; }
+        g.el.classList.add(right ? "ok" : "bad");
+        if (right) good++;
+        else g.el.insertAdjacentHTML("afterend", `<span class="fix${g.el.classList.contains("long") ? " block" : ""}">→ ${esc(g.show)}</span>`);
+      });
+      const r = good / gaps.length;
+      res.textContent = `${good} / ${gaps.length}`; res.classList.add(r === 1 ? "good" : r >= .5 ? "mid" : "low");
+      results.set(box, [good, gaps.length]); updateTotal();
+    };
+    const reset = () => { clearMarks(); gaps.forEach(g => g.kind === "text" ? g.el.value = "" : g.el.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed","false"))); results.delete(box); updateTotal(); };
+    box.querySelector('[data-a="check"]').onclick = check;
+    box.querySelector('[data-a="reset"]').onclick = reset;
+    box.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.tagName === "INPUT") check(); });
+    box._check = check; box._reset = reset;
+    app.append(box);
+  });
+});
+function updateTotal(){ let g=0,t=0; results.forEach(([a,b])=>{g+=a;t+=b}); document.getElementById("total").textContent = `${g} / ${t}`; }
+document.getElementById("checkAll").onclick = () => document.querySelectorAll(".ex").forEach(b => b._check());
+document.getElementById("resetAll").onclick = () => document.querySelectorAll(".ex").forEach(b => b._reset());
+</script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
+<button class="refrescar" type="button" onclick="location.reload()" aria-label="Actualizar la página">↻ Actualizar</button>
+</body>
+</html>

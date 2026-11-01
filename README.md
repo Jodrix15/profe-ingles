@@ -16,9 +16,12 @@ Fichas interactivas de inglés para mis clases particulares: examen de nivel, ej
 | Examen | `examen-nivel.html` | 30 preguntas para saber el nivel del alumno (A1–B1) |
 | Fichas | `ficha-ingles.html` | Ficha 1: pronombres, posesivos y *do* |
 | Fichas | `ficha-2.html` | Ficha 2: *be* y presente, con frases de tienda y de viaje |
+| Fichas | `ficha-3.html` | Ficha 3: unidades 8 y 10 (*I am doing / I do* y *was/were*) |
 | Teoría | `teoria-1.html` | Lo necesario para resolver la ficha 1 |
 | Teoría | `teoria-2.html` | Unidades 1–7: *to be*, presente continuo y presente simple |
+| Teoría | `teoria-3.html` | Unidades 8 y 10: presente continuo o simple, y *was/were* |
 | Vocabulario | `vocabulario.html` | Flashcards de tienda, ropa, viajes y verbos |
+| Vocabulario | `vocabulario-3.html` | Flashcards de la ficha 3 |
 
 ## Instalar en el móvil
 
@@ -31,7 +34,7 @@ Abre la web en el móvil y elige **Añadir a la pantalla de inicio**. Funciona c
 
 1. Crea el archivo HTML de la ficha.
 2. Añade su enlace en `index.html`, en la sección que le toque.
-3. Añádelo a la lista `FILES` de `sw.js` y sube el número de `CACHE` (`fichas-v8` → `fichas-v9`) para que funcione sin conexión y se actualice.
+3. Añádelo a la lista `FILES` de `sw.js` y sube el número de `CACHE` (`fichas-v9` → `fichas-v10`) para que funcione sin conexión y se actualice.
 4. Haz commit y push a `main`.
 
 ---

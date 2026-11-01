@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Inglés">
+<meta name="theme-color" content="#2747c9">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Vocabulario · Ficha 3</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: una tarjeta grande en el centro que se gira al tocarla; debajo, la lista completa por temas */
+:root{
+  --paper:#fbfaf6; --sheet:#ffffff; --ink:#1d2433; --muted:#5e6678; --line:#dfe2ea;
+  --accent:#2747c9; --accent-soft:#e8ecfb; --ok:#1f7a4a; --ok-soft:#e3f3ea; --bad:#c42b2b; --bad-soft:#fbe7e6;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --ok:#5fd093; --ok-soft:#173326; --bad:#ff7d74; --bad-soft:#3a1d1d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --ok:#5fd093; --ok-soft:#173326; --bad:#ff7d74; --bad-soft:#3a1d1d; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;padding:0 16px}
+.wrap{max-width:720px;margin:0 auto;padding-block:max(28px,env(safe-area-inset-top)) 64px}
+.volver{display:none;font-size:.95rem;color:var(--accent);text-decoration:none;margin-bottom:12px}
+@media (display-mode: standalone){.volver{display:inline-block}}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,4vw,2.3rem);line-height:1.1;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:6px 0 0}
+h2{font-family:var(--display);font-weight:700;font-size:1.3rem;margin:36px 0 10px}
+.bar{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
+.chip{font:inherit;font-size:.88rem;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:700}
+.chip:focus-visible,.btn:focus-visible,.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin:14px 0 10px}
+.count{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.95rem}
+.count b{color:var(--ink)}
+.progress{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:14px}
+.progress i{display:block;height:100%;width:0;background:var(--ok);transition:width .25s}
+.scene{perspective:1200px}
+.card{position:relative;width:100%;min-height:260px;border:0;padding:0;background:none;cursor:pointer;font:inherit;color:inherit;
+  transform-style:preserve-3d;transition:transform .45s ease;display:block}
+.card.flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--sheet);border:1px solid var(--line);border-radius:16px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 20px;gap:8px}
+.face.back{transform:rotateY(180deg);background:var(--accent-soft);border-color:var(--accent)}
+.tag{position:absolute;top:12px;left:16px;font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.word{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,6vw,2.4rem);line-height:1.15;text-wrap:balance}
+.ex{font-style:italic;color:var(--muted);max-width:40ch}
+.hint{position:absolute;bottom:12px;font-size:.8rem;color:var(--muted)}
+.speak{position:absolute;top:8px;right:10px;font:inherit;font-size:1.2rem;background:none;border:0;cursor:pointer;padding:6px;border-radius:8px;color:var(--accent)}
+.answer{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.btn{font:inherit;font-weight:700;font-size:1rem;padding:12px 16px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:var(--sheet);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.no{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.btn.si{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.btn.sm{font-size:.88rem;padding:6px 12px;border-radius:8px}
+.done{background:var(--sheet);border:1px solid var(--line);border-radius:16px;padding:28px 20px;text-align:center}
+.done p{margin:0 0 14px}
+.done .big{font-family:var(--display);font-size:1.6rem;font-weight:700;color:var(--ok)}
+.done .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+details{background:var(--sheet);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+summary{cursor:pointer;padding:12px 16px;font-weight:700}
+summary span{color:var(--muted);font-weight:400}
+.tbl{overflow-x:auto;padding:0 16px 10px}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:700;white-space:nowrap}
+td:last-child{color:var(--muted);font-style:italic}
+.refrescar{display:none;position:fixed;z-index:20;top:calc(env(safe-area-inset-top, 0px) + 10px);right:calc(env(safe-area-inset-right, 0px) + 12px);
+  font:inherit;font-size:.9rem;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);color:var(--accent);cursor:pointer}
+.refrescar:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (display-mode: standalone){.refrescar{display:block}}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="volver" href="./">‹ Todas las fichas</a>
+  <h1>Vocabulario · Ficha 3</h1>
+  <p class="sub">Toca la tarjeta para darle la vuelta. Marca <b>Lo sé</b> o <b>Otra vez</b>: las que no sepas vuelven a salir al final.</p>
+
+  <div class="bar" id="decks" role="group" aria-label="Temas"></div>
+  <div class="tools">
+    <div class="bar" id="dir" role="group" aria-label="Dirección" style="margin:0">
+      <button class="chip" type="button" data-dir="en" aria-pressed="true">Inglés → Español</button>
+      <button class="chip" type="button" data-dir="es" aria-pressed="false">Español → Inglés</button>
+    </div>
+    <button class="btn ghost sm" type="button" id="shuffle">Barajar de nuevo</button>
+  </div>
+
+  <div class="count" aria-live="polite" id="count"></div>
+  <div class="progress"><i id="bar"></i></div>
+
+  <div id="play">
+    <div class="scene">
+      <button class="card" id="card" type="button" aria-label="Tarjeta: toca para girar">
+        <div class="face front"><span class="tag" id="tagF"></span><div class="word" id="wordF"></div><div class="hint">Toca para girar</div></div>
+        <div class="face back"><span class="tag" id="tagB"></span><div class="word" id="wordB"></div><div class="ex" id="exB"></div></div>
+      </button>
+    </div>
+    <div class="answer">
+      <button class="btn no" type="button" id="again">Otra vez</button>
+      <button class="btn si" type="button" id="know">Lo sé</button>
+    </div>
+    <p style="text-align:center;margin:12px 0 0"><button class="btn ghost sm" type="button" id="speak">🔊 Escuchar en inglés</button></p>
+  </div>
+  <div class="done" id="done" hidden>
+    <p class="big">¡Terminado!</p>
+    <p id="doneTxt"></p>
+    <div class="row"><button class="btn" type="button" id="restart">Empezar otra vez</button></div>
+  </div>
+
+  <h2>Lista completa</h2>
+  <div id="list"></div>
+</div>
+
+<script>
+// [inglés, español, ejemplo]
+const DECKS = [
+ {id:"tienda", name:"En la tienda", cards:[
+  ["stockroom","almacén","Ana is folding T-shirts in the stockroom."],
+  ["shelf / shelves","estante / estantería","I'm putting the new jeans on the shelves."],
+  ["shop window","escaparate","How often do you change the shop window?"],
+  ["queue","cola, fila","The queue was very long."],
+  ["uniform","uniforme","Marta is wearing the new uniform."],
+  ["busy","con mucha gente, ajetreado","The shop gets very busy on Saturdays."],
+  ["quiet","tranquilo; en silencio","Today the shop is quiet."],
+  ["free","libre; gratis","The fitting rooms weren't free."],
+  ["dirty / clean","sucio / limpio","The fitting rooms were dirty."],
+  ["a break","un descanso","She's having a break."],
+  ["bigger / smaller size","una talla más / menos","Do you need a bigger size?"],
+  ["the blue one","el azul, la azul","I prefer the blue one."],
+  ["colour","color","Do you like this colour?"],
+  ["black · blue · green","negro · azul · verde","This jacket doesn't come in green."],
+  ["in cash / by card","en efectivo / con tarjeta","Do you usually pay by card or in cash?"],
+  ["in the sale","rebajado","The trousers were in the sale last week."]]},
+ {id:"verbos", name:"Verbos de acción", cards:[
+  ["to look for","buscar","I'm looking for a black dress."],
+  ["to serve","atender (a un cliente)","I'm serving another customer at the moment."],
+  ["to put","poner","I'm putting the jeans on the shelves."],
+  ["to change","cambiar","How often do you change the shop window?"],
+  ["to take","coger, llevarse; tomar (el bus)","I take the bus to work every day."],
+  ["to talk on the phone","hablar por teléfono","The manager is talking on the phone."],
+  ["to answer the phone","coger el teléfono","She can't answer the phone."],
+  ["to have a shower","ducharse","She's having a shower."],
+  ["to send a message","enviar un mensaje","I'm sending a message to my mum."],
+  ["to laugh","reírse","Why are you laughing?"],
+  ["to sleep","dormir","Shh! The baby is sleeping."],
+  ["to get busy","llenarse (de gente)","The shop gets busy on Saturdays."],
+  ["Hurry up!","¡Date prisa!","Hurry up! The bus is leaving."]]},
+ {id:"estado", name:"Verbos sin -ing", cards:[
+  ["to like","gustar","Do you like this colour?"],
+  ["to want","querer","I want to try this on."],
+  ["to need","necesitar","This customer needs a smaller size."],
+  ["to prefer","preferir","I prefer the blue one."],
+  ["to know","saber, conocer","Do you know where the fitting rooms are?"],
+  ["to understand","entender","Sorry, I don't understand."],
+  ["to remember","acordarse","I don't remember her name."],
+  ["to forget","olvidar","I always forget my keys."],
+  ["to mean","significar","What does this word mean?"],
+  ["to believe","creer","I don't believe you!"]]},
+ {id:"tiempo", name:"¿Cuándo?", cards:[
+  ["now","ahora","I'm working now."],
+  ["at the moment","en este momento","I'm serving a customer at the moment."],
+  ["today","hoy","Today she's working in the stockroom."],
+  ["every day","cada día","I take the bus every day."],
+  ["after work","después del trabajo","What do you usually do after work?"],
+  ["yesterday","ayer","The shop was very busy yesterday."],
+  ["last night","anoche","I was very tired last night."],
+  ["last week","la semana pasada","These jeans were €29.95 last week."],
+  ["last year","el año pasado","Last year my sister was 20."],
+  ["this morning","esta mañana","Why were you late this morning?"],
+  ["… ago","hace … (tiempo)","They were here five minutes ago."],
+  ["this time last year","el año pasado por estas fechas","This time last year I was in London."],
+  ["weekend","fin de semana","How was your weekend?"],
+  ["when I was a child","cuando era pequeño / pequeña","When I was a child, I was scared of dogs."]]},
+ {id:"diario", name:"Día a día", cards:[
+  ["tired","cansado / cansada","I was very tired yesterday."],
+  ["ill","enfermo / enferma","Ana wasn't at work because she was ill."],
+  ["happy","contento / contenta","The customers weren't happy."],
+  ["hungry","con hambre","Are you hungry?"],
+  ["scared of","tener miedo de","I was scared of the dark."],
+  ["boring","aburrido (que aburre)","The film was boring."],
+  ["late","tarde","Why were you late?"],
+  ["closed / open","cerrado / abierto","The shop was closed on Sunday."],
+  ["a holiday","un día festivo; vacaciones","Yesterday was a holiday."],
+  ["party","fiesta","Were you at the party on Saturday?"],
+  ["film","película","The film wasn't very good."],
+  ["keys","llaves","My keys were in my bag."],
+  ["weather","el tiempo (que hace)","Was the weather nice in Paris?"],
+  ["umbrella","paraguas","It's raining. Take an umbrella."],
+  ["boyfriend / girlfriend","novio / novia","My boyfriend doesn't like coffee."],
+  ["mum / dad","mamá / papá","I'm sending a message to my mum."],
+  ["cook","cocinero / cocinera","He's a cook."],
+  ["the baby","el bebé","The baby is sleeping."],
+  ["the dark","la oscuridad","I was scared of the dark."]]},
+ {id:"frases", name:"Frases útiles", cards:[
+  ["What do you do?","¿A qué te dedicas?","What do you do? — I'm a shop assistant."],
+  ["What are you doing?","¿Qué estás haciendo?","What are you doing? — I'm folding T-shirts."],
+  ["Are you looking for something?","¿Busca algo?","Excuse me, are you looking for something?"],
+  ["Be quiet, please.","Silencio, por favor.","Be quiet, please. The baby is sleeping."],
+  ["Can you speak slowly?","¿Puede hablar despacio?","Sorry, I don't understand. Can you speak slowly?"],
+  ["What does … mean?","¿Qué significa …?","What does this word mean?"],
+  ["How was your weekend?","¿Qué tal el fin de semana?","How was your weekend? — It was great, thanks!"],
+  ["Where were you born?","¿Dónde naciste?","Where were you born? — In Seville."],
+  ["I was born in …","Nací en …","I was born in Barcelona."],
+  ["She's over there.","Está allí.","Is the customer still waiting? — Yes, she's over there."],
+  ["still","todavía","Is the customer still waiting?"]]}
+];
+const $ = id => document.getElementById(id);
+let deck = "todas", dir = "en", queue = [], total = 0, known = 0, again = new Set(), cur = null;
+
+const cardsOf = id => id === "todas" ? DECKS.flatMap(d => d.cards.map(c => [...c, d.name])) : DECKS.find(d => d.id === id).cards.map(c => [...c, DECKS.find(d=>d.id===id).name]);
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+function start(list){
+  queue = shuffle(list ? [...list] : cardsOf(deck)); total = queue.length; known = 0; again = new Set();
+  $("play").hidden = false; $("done").hidden = true; show();
+}
+function show(){
+  const wasFlipped = $("card").classList.contains("flip");
+  $("card").classList.remove("flip");
+  if (!queue.length) return finish();
+  cur = queue[0];
+  const [en, es, ex, cat] = cur;
+  const front = dir === "en" ? en : es, back = dir === "en" ? es : en;
+  // espera al giro para no ver la respuesta de la siguiente tarjeta
+  setTimeout(() => {
+    $("tagF").textContent = cat; $("tagB").textContent = cat;
+    $("wordF").textContent = front; $("wordB").textContent = back; $("exB").textContent = ex;
+  }, wasFlipped ? 200 : 0);
+  $("count").innerHTML = `<b>${known}</b> de ${total} sabidas · quedan ${queue.length}`;
+  $("bar").style.width = (total ? known / total * 100 : 0) + "%";
+}
+function finish(){
+  $("play").hidden = true; $("done").hidden = false;
+  $("count").innerHTML = `<b>${known}</b> de ${total} sabidas`; $("bar").style.width = "100%";
+  $("doneTxt").textContent = again.size ? `Has repasado ${again.size} palabra${again.size>1?"s":""} más de una vez.` : "¡Todas a la primera!";
+}
+$("card").onclick = () => $("card").classList.toggle("flip");
+$("know").onclick = () => { if (!cur) return; queue.shift(); known++; show(); };
+$("again").onclick = () => { if (!cur) return; queue.push(queue.shift()); again.add(cur[0]); show(); };
+$("shuffle").onclick = () => start();
+$("restart").onclick = () => start();
+function speak(){
+  if (!cur || !("speechSynthesis" in window)) return;
+  const u = new SpeechSynthesisUtterance(cur[0].replace(/\s*\/\s*/g, ", ").replace("…", ""));
+  u.lang = "en-GB"; u.rate = .9; speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+$("speak").onclick = speak;
+if (!("speechSynthesis" in window)) $("speak").hidden = true;
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "BUTTON" && (e.key === " " || e.key === "Enter")) return;
+  if (e.key === " ") { e.preventDefault(); $("card").classList.toggle("flip"); }
+  if (e.key === "ArrowRight") $("know").click();
+  if (e.key === "ArrowLeft") $("again").click();
+});
+
+// chips de temas
+const decksEl = $("decks");
+[{id:"todas", name:"Todas", cards:DECKS.flatMap(d=>d.cards)}, ...DECKS].forEach(d => {
+  decksEl.insertAdjacentHTML("beforeend", `<button class="chip" type="button" data-id="${d.id}" aria-pressed="${d.id==="todas"}">${d.name} · ${d.cards.length}</button>`);
+});
+decksEl.onclick = e => { const b = e.target.closest("button"); if (!b) return;
+  deck = b.dataset.id; decksEl.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); start(); };
+$("dir").onclick = e => { const b = e.target.closest("button"); if (!b) return;
+  dir = b.dataset.dir; $("dir").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); show(); };
+
+// lista completa
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+$("list").innerHTML = DECKS.map(d => `<details><summary>${d.name} <span>· ${d.cards.length} palabras</span></summary><div class="tbl"><table>${
+  d.cards.map(([en,es,ex]) => `<tr><td>${esc(en)}</td><td>${esc(es)}</td><td>${esc(ex)}</td></tr>`).join("")}</table></div></details>`).join("");
+
+start();
+</script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
+<button class="refrescar" type="button" onclick="location.reload()" aria-label="Actualizar la página">↻ Actualizar</button>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Inglés">
+<meta name="theme-color" content="#2747c9">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Teoría · Unidades 8 y 10</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: apuntes de clase en una columna; cada bloque dice a qué unidad del libro corresponde */
+:root{
+  --paper:#fbfaf6; --sheet:#ffffff; --ink:#1d2433; --muted:#5e6678; --line:#dfe2ea;
+  --accent:#2747c9; --accent-soft:#e8ecfb; --bad:#c42b2b; --ok:#1f7a4a;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --bad:#ff7d74; --ok:#5fd093; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --bad:#ff7d74; --ok:#5fd093; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding:0 16px}
+.wrap{max-width:720px;margin:0 auto;padding-block:max(28px,env(safe-area-inset-top)) 64px}
+.volver{display:none;font-size:.95rem;color:var(--accent);text-decoration:none;margin-bottom:12px}
+@media (display-mode: standalone){.volver{display:inline-block}}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,4vw,2.3rem);line-height:1.1;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:6px 0 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);display:flex;gap:6px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--line);margin:18px 0 8px}
+nav a{font-size:.88rem;text-decoration:none;color:var(--ink);padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--sheet)}
+nav a:hover,nav a:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+section{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:18px 18px 8px;margin-top:18px;scroll-margin-top:70px}
+h2{font-family:var(--display);font-weight:700;font-size:1.3rem;margin:0 0 4px}
+.para{display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.02em;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:2px 10px;margin-bottom:10px}
+h3{font-size:1rem;margin:16px 0 6px}
+p{margin:0 0 12px;max-width:65ch}
+ul{margin:0 0 12px;padding-left:1.2em}
+li{margin-bottom:4px}
+.tbl{overflow-x:auto;margin:0 0 14px}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--accent);font-weight:700;white-space:nowrap}
+td b{color:var(--ink)}
+.no{color:var(--bad);text-decoration:line-through}
+.si{color:var(--ok);font-weight:700}
+.ej{font-style:italic}
+.formula{font-family:var(--display);font-weight:700;font-size:1.1rem;background:var(--accent-soft);color:var(--accent);border-radius:8px;padding:8px 12px;margin:0 0 14px;display:inline-block}
+.refrescar{display:none;position:fixed;z-index:20;top:calc(env(safe-area-inset-top, 0px) + 10px);right:calc(env(safe-area-inset-right, 0px) + 12px);
+  font:inherit;font-size:.9rem;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);color:var(--accent);cursor:pointer}
+.refrescar:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (display-mode: standalone){.refrescar{display:block}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="volver" href="./">‹ Todas las fichas</a>
+  <h1>Teoría · Unidades 8 y 10</h1>
+  <p class="sub">Resumen de las unidades 8 y 10 de <i>Essential Grammar in Use</i>: cuándo usar el presente continuo o el presente simple, y el pasado de <i>to be</i> (<i>was / were</i>).</p>
+
+  <nav aria-label="Unidades">
+    <a href="#u8">8 · I am doing / I do</a><a href="#verbos">8 · Verbos sin -ing</a>
+    <a href="#u10">10 · was / were</a><a href="#u10p">10 · Preguntas</a>
+  </nav>
+
+  <section id="u8">
+    <h2>Presente continuo o presente simple</h2>
+    <span class="para">Unidad 8</span>
+    <p>En inglés hay <b>dos presentes</b> y no se pueden cambiar uno por otro. La pregunta clave es: <b>¿está pasando ahora mismo o pasa en general?</b></p>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Continuo<br><i>I am doing</i></th><th>Simple<br><i>I do</i></th></tr></thead>
+      <tbody>
+        <tr><th>¿Cuándo?</th><td><b>Ahora</b>, en este momento</td><td><b>En general</b>: siempre, a menudo, cada día, a veces</td></tr>
+        <tr><th>Forma</th><td>am / is / are + verbo-<b>ing</b></td><td>verbo (+ <b>-s</b> con he/she/it)</td></tr>
+        <tr><th>En español</th><td>"estoy trabajando"</td><td>"trabajo"</td></tr>
+        <tr><th>Pistas</th><td>now, at the moment, today, Look!, Listen!, Be quiet!</td><td>every day, usually, always, often, never, on Saturdays</td></tr>
+        <tr><th>Negativa</th><td>I'<b>m not</b> working · she <b>isn't</b> working</td><td>I <b>don't</b> work · she <b>doesn't</b> work</td></tr>
+        <tr><th>Pregunta</th><td><b>Are</b> you working?</td><td><b>Do</b> you work?</td></tr>
+      </tbody></table></div>
+    <h3>Un ejemplo con las dos</h3>
+    <ul>
+      <li><span class="ej">I <b>work</b> at Zara from Monday to Friday.</span> → es mi trabajo, en general.</li>
+      <li><span class="ej">Sorry, I can't talk. I'<b>m working</b>.</span> → ahora mismo.</li>
+      <li><span class="ej">Ana usually <b>works</b> at the till, but today she'<b>s working</b> in the stockroom.</span> → normalmente / hoy.</li>
+      <li><span class="ej">It <b>rains</b> a lot in winter.</span> — <span class="ej">Take an umbrella. It'<b>s raining</b>.</span></li>
+    </ul>
+    <h3>Ojo: en español usamos el presente para todo</h3>
+    <p>En español decimos "¿Qué haces?" tanto para "¿a qué te dedicas?" como para "¿qué estás haciendo?". En inglés son dos preguntas distintas:</p>
+    <ul>
+      <li><b>What do you do?</b> = ¿a qué te dedicas? <span class="ej">— I'm a shop assistant.</span></li>
+      <li><b>What are you doing?</b> = ¿qué estás haciendo (ahora)? <span class="ej">— I'm folding T-shirts.</span></li>
+      <li><span class="no">Please be quiet. I work.</span> → <span class="si">Please be quiet. I'm working.</span></li>
+      <li><span class="no">I'm working at Zara every Saturday.</span> → <span class="si">I work at Zara every Saturday.</span></li>
+    </ul>
+  </section>
+
+  <section id="verbos">
+    <h2>Verbos que <u>no</u> van en -ing</h2>
+    <span class="para">Unidad 8</span>
+    <p>Algunos verbos hablan de lo que <b>piensas, sabes o quieres</b>, no de una acción. Estos verbos van <b>siempre en presente simple</b>, aunque sea ahora mismo.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Verbo</th><th>Significa</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td><b>like</b></td><td>gustar</td><td class="ej">Do you like this colour?</td></tr>
+        <tr><td><b>want</b></td><td>querer</td><td class="ej">I want to try this on.</td></tr>
+        <tr><td><b>need</b></td><td>necesitar</td><td class="ej">Do you need a bag?</td></tr>
+        <tr><td><b>prefer</b></td><td>preferir</td><td class="ej">I prefer the blue one.</td></tr>
+        <tr><td><b>know</b></td><td>saber, conocer</td><td class="ej">I don't know the price.</td></tr>
+        <tr><td><b>understand</b></td><td>entender</td><td class="ej">Sorry, I don't understand.</td></tr>
+        <tr><td><b>remember</b></td><td>acordarse</td><td class="ej">I don't remember her name.</td></tr>
+        <tr><td><b>forget</b></td><td>olvidar</td><td class="ej">I always forget my keys.</td></tr>
+        <tr><td><b>mean</b></td><td>significar, querer decir</td><td class="ej">What does this word mean?</td></tr>
+        <tr><td><b>believe</b></td><td>creer</td><td class="ej">I don't believe you!</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li><span class="no">I'm wanting a coffee.</span> → <span class="si">I want a coffee.</span></li>
+      <li><span class="no">Are you understanding me?</span> → <span class="si">Do you understand me?</span></li>
+      <li><span class="no">She is needing a smaller size.</span> → <span class="si">She needs a smaller size.</span></li>
+    </ul>
+  </section>
+
+  <section id="u10">
+    <h2>El pasado de <i>to be</i>: <i>was / were</i></h2>
+    <span class="para">Unidad 10</span>
+    <p><i>To be</i> solo tiene <b>dos formas</b> en pasado. Sirven para "era, estaba, fue, estuvo, eras, estabas…".</p>
+    <p class="formula">am / is → was · are → were</p>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Afirmativa</th><th>Negativa</th></tr></thead>
+      <tbody>
+        <tr><th>I / he / she / it</th><td>I <b>was</b> tired.</td><td>I <b>wasn't</b> tired. (was not)</td></tr>
+        <tr><th>we / you / they</th><td>They <b>were</b> late.</td><td>They <b>weren't</b> late. (were not)</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li><span class="ej">I'm tired now.</span> → <span class="ej">I <b>was</b> tired last night.</span></li>
+      <li><span class="ej">The shop is quiet today.</span> → <span class="ej">The shop <b>was</b> very busy yesterday.</span></li>
+      <li><span class="ej">These jeans are €19.95 now. They <b>were</b> €29.95 last week.</span></li>
+      <li><span class="ej">When I <b>was</b> a child, I <b>was</b> scared of dogs.</span></li>
+      <li>Truco: <b>I</b> va con <b>was</b>, igual que con <i>am</i>: <span class="no">I were</span> → <span class="si">I was</span>. <b>You</b> siempre con <b>were</b>: <span class="no">you was</span> → <span class="si">you were</span>.</li>
+      <li><i>Was</i> y <i>were</i> <b>no se contraen</b> en afirmativa: <span class="no">I's tired</span>.</li>
+    </ul>
+    <h3>Palabras de pasado</h3>
+    <p><b>yesterday</b> (ayer) · <b>last night</b> (anoche) · <b>last week / last Saturday / last year</b> (la semana pasada, el sábado pasado, el año pasado) · <b>this morning</b> (esta mañana) · <b>an hour ago / two days ago</b> (hace una hora, hace dos días) · <b>this time last year</b> (el año pasado por estas fechas) · <b>when I was a child</b> (cuando era pequeño/a).</p>
+    <ul>
+      <li><i>Ago</i> va <b>detrás</b>: <span class="si">five minutes ago</span> — <span class="no">ago five minutes</span>.</li>
+      <li><i>Last</i> va sin <i>the</i>: <span class="si">last week</span> — <span class="no">the last week</span>.</li>
+    </ul>
+    <h3>Igual que en presente: "tener" → <i>to be</i></h3>
+    <p><span class="ej">I was hungry</span> (tenía hambre) · <span class="ej">She was 22 last year</span> (tenía 22 años) · <span class="ej">We were cold</span> (teníamos frío).</p>
+    <h3>Nacer: <i>I was born</i></h3>
+    <p>"Nací" se dice con <i>was</i>: <span class="si">I was born in Barcelona.</span> — <span class="no">I born in Barcelona</span>. <span class="ej">Where were you born?</span> (¿Dónde naciste?)</p>
+  </section>
+
+  <section id="u10p">
+    <h2>Preguntas y respuestas cortas con <i>was / were</i></h2>
+    <span class="para">Unidad 10</span>
+    <p>Igual que en presente: <i>was / were</i> pasa <b>delante del sujeto</b>. No se usa <i>do</i>.</p>
+    <p class="formula">(Where / Why / How…) + was / were + sujeto + resto?</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Afirmativa</th><th>Pregunta</th></tr></thead>
+      <tbody>
+        <tr><td>The shop was busy.</td><td><b>Was the shop</b> busy?</td></tr>
+        <tr><td>You were at work.</td><td><b>Were you</b> at work?</td></tr>
+        <tr><td>They were expensive.</td><td>How much <b>were they</b>?</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li><span class="ej">Why were you late this morning? — The traffic was bad.</span></li>
+      <li><b>How was…?</b> = ¿qué tal fue…? <span class="ej">How was your weekend? — It was great, thanks!</span></li>
+      <li><span class="no">Was you at home?</span> → <span class="si">Were you at home?</span></li>
+    </ul>
+    <h3>Respuestas cortas</h3>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Sí</th><th>No</th></tr></thead>
+      <tbody>
+        <tr><th>I / he / she / it</th><td>Yes, I was.</td><td>No, I wasn't.</td></tr>
+        <tr><th>we / you / they</th><td>Yes, they were.</td><td>No, they weren't.</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li>Ojo con <b>you</b>: si te preguntan <span class="ej">Were you at work?</span>, contestas con <b>I</b>: <span class="si">Yes, I was.</span></li>
+      <li><span class="ej">Was the jacket expensive? — No, it wasn't.</span> · <span class="ej">Were Sue and Steve at the party? — No, they weren't.</span></li>
+    </ul>
+  </section>
+</div>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
+<button class="refrescar" type="button" onclick="location.reload()" aria-label="Actualizar la página">↻ Actualizar</button>
+</body>
+</html>
