@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Inglés">
+<meta name="theme-color" content="#2747c9">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Ficha 4 · Pasado continuo y present perfect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: cuaderno de ejercicios, una columna de lectura, corrección en "boli rojo" */
+:root{
+  --paper:#fbfaf6; --sheet:#ffffff; --ink:#1d2433; --muted:#5e6678; --line:#dfe2ea;
+  --accent:#2747c9; --accent-soft:#e8ecfb; --ok:#1f7a4a; --ok-soft:#e3f3ea; --bad:#c42b2b; --bad-soft:#fbe7e6;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --ok:#5fd093; --ok-soft:#173326; --bad:#ff7d74; --bad-soft:#3a1d1d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --ok:#5fd093; --ok-soft:#173326; --bad:#ff7d74; --bad-soft:#3a1d1d; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 64px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,4vw,2.3rem);line-height:1.1;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:6px 0 0}
+.score{font-family:var(--display);font-variant-numeric:tabular-nums;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:8px 14px;text-align:right}
+.score b{font-size:1.5rem;color:var(--accent)}
+.score small{display:block;color:var(--muted);font-family:var(--body);font-size:.8rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);display:flex;gap:6px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:22px}
+nav a{font-size:.88rem;text-decoration:none;color:var(--ink);padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--sheet)}
+nav a:hover,nav a:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+h2{font-family:var(--display);font-weight:700;font-size:1.35rem;margin:36px 0 12px;scroll-margin-top:70px}
+h2 span{color:var(--accent)}
+.ex{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;margin-bottom:16px}
+.ex h3{font-size:1rem;margin:0 0 12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.ex h3 .res{font-variant-numeric:tabular-nums;font-weight:700}
+.res.good{color:var(--ok)} .res.mid{color:var(--accent)} .res.low{color:var(--bad)}
+ol{margin:0;padding-left:1.6em;display:grid;gap:10px}
+li{padding-left:4px}
+li .src{color:var(--muted);font-style:italic;display:block;font-size:.95rem}
+input[type=text]{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--line);padding:0 4px;min-width:5ch;width:7ch;border-radius:0}
+input.long{display:block;width:100%;margin-top:4px;border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--paper)}
+input:focus{outline:none;border-color:var(--accent)}
+input.ok{border-color:var(--ok);color:var(--ok);background:var(--ok-soft)}
+input.bad{border-color:var(--bad);color:var(--bad);background:var(--bad-soft);text-decoration:line-through;text-decoration-thickness:1px}
+.choice{display:inline-flex;flex-wrap:wrap;gap:4px;vertical-align:baseline}
+.tip p{margin:10px 0 0}
+.tbl{overflow-x:auto}
+.tip table{border-collapse:collapse;width:100%;font-size:.92rem}
+.tip th,.tip td{text-align:left;padding:4px 10px;border-bottom:1px solid var(--line)}
+.tip th{font-weight:700;color:var(--accent)}
+.choice button{font:inherit;font-size:.95rem;padding:1px 9px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;cursor:pointer}
+.choice button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:700}
+.choice button:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.choice.ok button[aria-pressed="true"]{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.choice.bad button[aria-pressed="true"]{background:var(--bad-soft);border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.fix{color:var(--bad);font-size:.9rem;font-weight:700;margin-left:6px}
+.fix.block{display:block;margin:4px 0 0}
+.actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.btn{font:inherit;font-size:.92rem;font-weight:700;padding:7px 16px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--sheet);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.tip{background:var(--accent-soft);border-radius:10px;padding:12px 16px;font-size:.95rem;margin-bottom:16px}
+footer{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+@media (prefers-reduced-motion:no-preference){input,.choice button{transition:background .15s,border-color .15s}}
+.volver{display:none;font-size:.95rem;color:var(--accent);text-decoration:none;margin-bottom:12px}
+@media (display-mode: standalone){.volver{display:inline-block}}
+.refrescar{display:none;position:fixed;z-index:20;top:calc(env(safe-area-inset-top, 0px) + 10px);right:calc(env(safe-area-inset-right, 0px) + 12px);
+  font:inherit;font-size:.9rem;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);color:var(--accent);cursor:pointer}
+.refrescar:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (display-mode: standalone){.refrescar{display:block}}
+.tense{display:inline-block;font-size:.78rem;font-weight:700;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent);border-radius:999px;padding:0 9px;margin:0 6px 4px 0;vertical-align:middle}
+.why{margin:6px 0 0;padding:8px 12px;border-left:3px solid var(--bad);background:var(--bad-soft);border-radius:0 8px 8px 0;font-size:.92rem}
+.why b{color:var(--bad)}
+details.guia{background:var(--sheet);border:1px solid var(--line);border-radius:12px;margin-bottom:16px}
+details.guia summary{cursor:pointer;padding:12px 16px;font-weight:700}
+details.guia .tbl{padding:0 16px 12px}
+details.guia table{border-collapse:collapse;width:100%;font-size:.92rem}
+details.guia th,details.guia td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+details.guia th{color:var(--accent)}
+details.guia p{margin:0 16px 12px;font-size:.92rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a class="volver" href="./">‹ Todas las fichas</a>
+  <header>
+    <div>
+      <h1>Ficha 4 · Pasado continuo y <i>present perfect</i></h1>
+      <p class="sub">Unidades 13–16. Frases de tienda y del día a día. Escribe las respuestas y pulsa <b>Corregir</b>. Si una frase podría ir en más de un tiempo, la etiqueta <span class="tense" style="margin:0">⏱</span> te dice cuál usar.</p>
+    </div>
+    <div class="score" aria-live="polite"><b id="total">0 / 0</b><small>aciertos corregidos</small></div>
+  </header>
+  <details class="guia">
+    <summary>⏱ ¿Qué tiempo uso? Palabras pista</summary>
+    <div class="tbl"><table>
+      <tr><th>Si ves…</th><th>Usa…</th><th>Ejemplo</th></tr>
+      <tr><td>now, Look!, Shh!</td><td>Presente continuo</td><td>Look! It's raining.</td></tr>
+      <tr><td>every day, usually, always</td><td>Presente simple</td><td>I work on Saturdays.</td></tr>
+      <tr><td>yesterday, last…, … ago, in 2020</td><td>Pasado simple</td><td>I lost my phone yesterday.</td></tr>
+      <tr><td>at 5 o'clock yesterday, while, this time last…</td><td>Pasado continuo</td><td>At 5 I was serving a customer.</td></tr>
+      <tr><td>when + acción corta</td><td>Larga: pasado continuo<br>Corta: pasado simple</td><td>I was folding jeans when she called.</td></tr>
+      <tr><td>just, already, yet, resultado ahora</td><td>Present perfect</td><td>She has just gone home.</td></tr>
+    </table></div>
+    <p>Truco: si hay una fecha o un momento terminado (yesterday, last week), nunca uses el present perfect.</p>
+  </details>
+  <nav id="nav" aria-label="Secciones"></nav>
+  <main id="app"></main>
+  <footer>
+    <button class="btn" id="checkAll" type="button">Corregir todo</button>
+    <button class="btn ghost" id="resetAll" type="button">Borrar todo</button>
+  </footer>
+</div>
+
+<script>
+// ___ = hueco de texto · {a|b} = elegir opción · long:true = escribir la frase entera
+// Cada frase: [plantilla, respuestas, por qué (se ve al fallar), tiempo verbal (solo si la frase podría ir en más de un tiempo)]
+// Contexto: dependienta de Zara y vida diaria
+const SECTIONS = [
+ {id:"u13", title:"13 · I was doing", ex:[
+  {t:"13.1 Completa con was/were + -ing", items:[
+   ["At 10 o'clock yesterday I ___ T-shirts in the stockroom. <span class=src>(fold)</span>",[["was folding"]],"Acción que estaba en marcha a una hora del pasado → was/were + -ing. Con «I» va <b>was</b>."],
+   ["At 6 o'clock Ana and Marta ___ the shop window. <span class=src>(change)</span>",[["were changing"]],"Ana and Marta = they → <b>were</b> + verbo en -ing."],
+   ["What ___ at 9 o'clock last night? <span class=src>(you / do)</span>",[["were you doing"]],"En la pregunta, was/were va delante del sujeto: <b>were you</b> doing. Con «you» siempre <b>were</b>."],
+   ["Sorry, I ___. Can you say that again? <span class=src>(not / listen)</span>",[["wasn't listening"]],"Negativa del pasado continuo: <b>wasn't</b> (was not) + -ing."],
+   ["Yesterday the manager ___ a black suit. <span class=src>(wear)</span>",[["was wearing"]],"The manager = he/she → <b>was</b> + wearing. Ropa que llevaba ese día."],
+   ["___ at the till at 3 o'clock? <span class=src>(Ana / work)</span>",[["Was Ana working"]],"Pregunta: <b>Was</b> + sujeto + -ing → Was Ana working?"],
+   ["We ___ much at 4 o'clock because the shop was empty. <span class=src>(not / do)</span>",[["weren't doing"]],"We → <b>weren't</b> (were not) + doing."],
+   ["This time last year I ___ in a restaurant. <span class=src>(work)</span>",[["was working"]],"«This time last year» = en ese momento del pasado, algo en marcha → <b>was working</b>."],
+   ["The phone ___, but nobody answered. <span class=src>(ring)</span>",[["was ringing"]],"El teléfono estaba sonando (acción en marcha) → <b>was ringing</b>."]]},
+  {t:"13.2 Un día de Lucía en Zara: ¿qué estaba haciendo?", items:[
+   ["At 9.30 Lucía ___ boxes. <span class=src>(9.00–10.00 · unpack)</span>",[["was unpacking"]],"A las 9.30 estaba en medio de esa acción (de 9 a 10) → <b>was</b> + unpacking."],
+   ["At 11 o'clock she ___ clothes on hangers. <span class=src>(10.00–12.00 · put)</span>",[["was putting"]],"Put → putting (se dobla la t). She → <b>was</b>."],
+   ["At 12.15 she ___ a coffee with Marta. <span class=src>(12.00–12.30 · have)</span>",[["was having"]],"Have → having (se quita la e). She → <b>was</b>."],
+   ["At 1 o'clock she ___ customers at the till. <span class=src>(12.30–3.00 · serve)</span>",[["was serving"]],"Serve → serving (se quita la e). She → <b>was</b>."],
+   ["At 3.30 she and Marta ___ the fitting rooms. <span class=src>(3.00–4.00 · tidy)</span>",[["were tidying"]],"She and Marta = they → <b>were</b>. Tidy → tidying (la y se queda)."],
+   ["At 4.30 she ___ home on the bus. <span class=src>(4.15–5.00 · go)</span>",[["was going"]],"She → <b>was</b> + going."],
+   ["At 7 o'clock she ___ dinner. <span class=src>(6.30–7.30 · cook)</span>",[["was cooking"]],"She → <b>was</b> + cooking."],
+   ["At 10 o'clock she ___ TV. <span class=src>(9.30–11.00 · watch)</span>",[["was watching"]],"She → <b>was</b> + watching."]]},
+  {t:"13.3 Elige was o were", items:[
+   ["I {was|were} talking to a customer.",["was"],"I → <b>was</b>."],
+   ["The girls {wasn't|weren't} wearing their uniforms.",["weren't"],"The girls = they → <b>weren't</b>."],
+   ["{Was|Were} the shop getting busy?",["Was"],"The shop = it → <b>was</b>."],
+   ["What {was|were} you doing in the stockroom?",["were"],"You → siempre <b>were</b>."],
+   ["{Was|Were} it raining when you got up?",["Was"],"It → <b>was</b>."],
+   ["Ana and I {was|were} having lunch at 2.",["were"],"Ana and I = we → <b>were</b>."],
+   ["My boss {wasn't|weren't} working yesterday.",["wasn't"],"My boss = he/she → <b>wasn't</b>."],
+   ["Why {was|were} the customers laughing?",["were"],"The customers = they → <b>were</b>."]]},
+  {t:"13.4 Pasa la frase al pasado", long:true, items:[
+   ["I'm working at the till. (at 5 o'clock yesterday)",["I was working at the till at 5 o'clock yesterday","At 5 o'clock yesterday I was working at the till","I was working at the till at five o'clock yesterday","At five o'clock yesterday I was working at the till"],"am working (ahora) → <b>was working</b> (en ese momento del pasado)."],
+   ["Marta is folding jeans. (at 11 o'clock)",["Marta was folding jeans at 11 o'clock","At 11 o'clock Marta was folding jeans","Marta was folding jeans at eleven o'clock","At eleven o'clock Marta was folding jeans"],"is folding → <b>was folding</b>."],
+   ["They aren't wearing their name badges. (yesterday)",["They weren't wearing their name badges yesterday","Yesterday they weren't wearing their name badges"],"aren't → <b>weren't</b>. El -ing no cambia."],
+   ["Is it raining? (when you left work)",["Was it raining when you left work"],"Is it…? → <b>Was it</b> raining…? El orden de la pregunta se mantiene."],
+   ["What are you doing? (at 10 last night)",["What were you doing at 10 last night","What were you doing at ten last night"],"are you doing → <b>were you doing</b>."],
+   ["The customers are waiting for the fitting rooms. (at 6 o'clock)",["The customers were waiting for the fitting rooms at 6 o'clock","At 6 o'clock the customers were waiting for the fitting rooms","The customers were waiting for the fitting rooms at six o'clock","At six o'clock the customers were waiting for the fitting rooms"],"are waiting → <b>were waiting</b>."]]},
+  {t:"13.5 Traduce al inglés", long:true, items:[
+   ["(Yo) estaba doblando camisetas.",["I was folding T-shirts"],"«Estaba + -ando» = <b>was + -ing</b>. Doblar = fold."],
+   ["¿Qué estabas haciendo a las ocho?",["What were you doing at eight","What were you doing at 8","What were you doing at 8 o'clock","What were you doing at eight o'clock"],"Pregunta: What + <b>were you</b> + doing…?"],
+   ["Estaba lloviendo y no salimos.",["It was raining and we didn't go out","It was raining so we didn't go out"],"Para el tiempo se usa «it»: <b>It was raining</b>. «No salimos» es una acción completa → didn't go out."],
+   ["(Yo) no estaba escuchando.",["I wasn't listening"],"Negativa: <b>wasn't</b> + listening."],
+   ["Ayer (yo) llevaba una falda negra.",["Yesterday I was wearing a black skirt","I was wearing a black skirt yesterday"],"Llevar ropa = <b>wear</b>. El adjetivo va delante: a <b>black skirt</b>."],
+   ["Los clientes estaban esperando en la cola.",["The customers were waiting in the queue","The customers were waiting in line","The customers were waiting in the line"],"The customers = they → <b>were waiting</b>. Cola = queue."]]}]},
+
+ {id:"u14", title:"14 · I was doing / I did", ex:[
+  {t:"14.1 Elige el tiempo correcto", items:[
+   ["I {was serving|served} a customer when the alarm {was ringing|rang}.",["was serving","rang"],"Acción larga en marcha (<b>was serving</b>) que se corta por una acción corta (<b>rang</b>, pasado simple)."],
+   ["Yesterday I {was starting|started} work at 9 and {was finishing|finished} at 5.",["started","finished"],"Son acciones completas, una detrás de otra → pasado simple: <b>started</b>, <b>finished</b>."],
+   ["When I arrived, Marta {was opening|opened} the boxes.",["was opening"],"Marta ya había empezado antes de que yo llegara → <b>was opening</b>. (Con «opened» significaría que empezó al llegar yo.)","Pasado continuo · ya lo estaba haciendo cuando llegué"],
+   ["{Were you watching|Did you watch} the match last night?",["Did you watch"],"Preguntamos por el partido entero (acción completa) → <b>Did you watch</b>.","Pasado simple · acción completa"],
+   ["Ana {was falling|fell} off the ladder while she {was putting|put} jeans on the top shelf.",["fell","was putting"],"«While» + acción larga (<b>was putting</b>); caerse es una acción corta → <b>fell</b>."],
+   ["It {was raining|rained} when I {was leaving|left} work.",["was raining","left"],"La lluvia ya estaba en marcha (<b>was raining</b>) cuando salí, que es un momento (<b>left</b>)."],
+   ["I {was losing|lost} my phone yesterday.",["lost"],"Perder algo es una acción corta y terminada → <b>lost</b>."],
+   ["What {were you doing|did you do} when the lights went out?",["were you doing"],"Preguntamos qué estaba en marcha en ese momento → <b>were you doing</b>. (Con «did you do» preguntaríamos qué hiciste después.)","Pasado continuo · qué hacías en ese momento"],
+   ["The customer {was paying|paid} and {was leaving|left}.",["paid","left"],"Dos acciones completas seguidas → pasado simple: <b>paid</b>, <b>left</b>."],
+   ["While I {was tidying|tidied} the fitting rooms, I {was finding|found} a wallet.",["was tidying","found"],"«While» + acción larga (<b>was tidying</b>); encontrar es un momento → <b>found</b>."]]},
+  {t:"14.2 Pon el verbo en pasado simple o pasado continuo", items:[
+   ["Marta ___ a hanger while she ___ a coat. <span class=src>(break · hang up)</span>",[["broke"],["was hanging up"]],"Romper es un momento → <b>broke</b> (irregular). Colgar el abrigo estaba en marcha → <b>was hanging up</b>."],
+   ["When I ___ to work, my boss ___ on the phone. <span class=src>(get · talk)</span>",[["got"],["was talking"]],"Llegar es un momento → <b>got</b> (irregular). Hablar ya estaba en marcha → <b>was talking</b>."],
+   ["___ the new manager yesterday? — Yes, she ___ a red dress. <span class=src>(you / see · wear)</span>",[["Did you see"],["was wearing"]],"Pregunta de pasado simple: <b>Did you see</b>. Lo que llevaba puesto en ese momento → <b>was wearing</b>."],
+   ["I ___ to work yesterday. I was ill. <span class=src>(not / go)</span>",[["didn't go"]],"Acción completa en negativa → <b>didn't</b> + verbo base (go, no went)."],
+   ["Sorry, I ___ you. I ___ to music. <span class=src>(not / hear · listen)</span>",[["didn't hear"],["was listening"]],"No oír es un hecho → <b>didn't hear</b>. Escuchar música estaba en marcha → <b>was listening</b>."],
+   ["The customer ___ a jacket when her phone ___. <span class=src>(try on · ring)</span>",[["was trying on"],["rang"]],"Probarse la chaqueta estaba en marcha → <b>was trying on</b>. El teléfono la interrumpe → <b>rang</b>."],
+   ["Ana ___ a wallet in the fitting room and ___ it to the manager. <span class=src>(find · give)</span>",[["found"],["gave"]],"Dos acciones completas seguidas → <b>found</b> y <b>gave</b> (los dos irregulares)."],
+   ["What ___ at 8 o'clock last night? — I ___ dinner. <span class=src>(you / do · have)</span>",[["were you doing"],["was having"]],"«At 8 o'clock» = qué estaba en marcha a esa hora → <b>were you doing</b> / <b>was having</b>."],
+   ["Yesterday we ___ at 10, so I ___ work at 10.30. <span class=src>(close · leave)</span>",[["closed"],["left"]],"Dos hechos completos de ayer → <b>closed</b> y <b>left</b> (irregular).","Pasado simple · hechos completos"],
+   ["How ___ your finger? — I ___ a box. <span class=src>(you / cut · open)</span>",[["did you cut"],["was opening"]],"Cortarse es un momento → <b>did you cut</b>. Abrir la caja estaba en marcha → <b>was opening</b>."]]},
+  {t:"14.3 Une las dos frases con when", long:true, items:[
+   ["I was having lunch. My boss called me.",["I was having lunch when my boss called me","When my boss called me I was having lunch","My boss called me when I was having lunch"],"La acción larga va en pasado continuo (<b>was having</b>) y la que la interrumpe en pasado simple (<b>called</b>)."],
+   ["Ana was tidying the stockroom. She found her keys.",["Ana was tidying the stockroom when she found her keys","Ana found her keys when she was tidying the stockroom","When Ana was tidying the stockroom she found her keys"],"Larga: <b>was tidying</b>. Corta: <b>found</b>. «When» va delante de cualquiera de las dos."],
+   ["We were closing the shop. A customer came in.",["We were closing the shop when a customer came in","A customer came in when we were closing the shop","When a customer came in we were closing the shop"],"Larga: <b>were closing</b>. Corta: <b>came in</b>."],
+   ["I was walking to work. It started to rain.",["I was walking to work when it started to rain","It started to rain when I was walking to work","I was walking to work when it started raining","It started raining when I was walking to work"],"Larga: <b>was walking</b>. Corta: <b>started</b>."]]},
+  {t:"14.4 Traduce al inglés", long:true, items:[
+   ["(Yo) estaba atendiendo a una clienta cuando sonó el teléfono.",["I was serving a customer when the phone rang","I was helping a customer when the phone rang"],"Larga: <b>was serving</b>. Corta: <b>rang</b> (pasado de ring)."],
+   ["Ayer empecé a trabajar a las nueve.",["Yesterday I started work at nine","I started work at nine yesterday","Yesterday I started work at 9","I started work at 9 yesterday","Yesterday I started working at nine","I started working at nine yesterday","Yesterday I started working at 9","I started working at 9 yesterday"],"Hecho completo de ayer → pasado simple: <b>started</b>."],
+   ["¿Qué hacías cuando te llamé?",["What were you doing when I called you","What were you doing when I called","What were you doing when I phoned you","What were you doing when I phoned"],"«¿Qué hacías?» = qué estaba en marcha → <b>were you doing</b>. Llamar es un momento → <b>called</b>."],
+   ["Se cayó mientras corría.",["She fell while she was running","He fell while he was running","She fell when she was running","He fell when he was running"],"Corta: <b>fell</b> (pasado de fall). Larga: <b>was running</b>. En inglés hay que poner el sujeto: she/he."],
+   ["(Yo) no vi a Marta ayer.",["I didn't see Marta yesterday","Yesterday I didn't see Marta"],"Negativa de pasado simple: <b>didn't</b> + verbo base (see, no saw)."]]}]},
+
+ {id:"u15", title:"15 · I have done", ex:[
+  {t:"15.1 Escribe el participio (3.ª columna)", items:[
+   ["buy → I have ___",[["bought"]],"Irregular: buy – bought – <b>bought</b>."],
+   ["sell → we have ___",[["sold"]],"Irregular: sell – sold – <b>sold</b>."],
+   ["lose → she has ___",[["lost"]],"Irregular: lose – lost – <b>lost</b>."],
+   ["find → I have ___",[["found"]],"Irregular: find – found – <b>found</b>."],
+   ["see → have you ___",[["seen"]],"Irregular: see – saw – <b>seen</b>. El pasado y el participio son distintos."],
+   ["go → he has ___",[["gone"]],"Irregular: go – went – <b>gone</b>."],
+   ["do → they have ___",[["done"]],"Irregular: do – did – <b>done</b>."],
+   ["take → somebody has ___",[["taken"]],"Irregular: take – took – <b>taken</b>."],
+   ["break → it has ___",[["broken"]],"Irregular: break – broke – <b>broken</b>."],
+   ["forget → I have ___",[["forgotten"]],"Irregular: forget – forgot – <b>forgotten</b>."],
+   ["wear → she hasn't ___",[["worn"]],"Irregular: wear – wore – <b>worn</b>."],
+   ["close → we have ___",[["closed"]],"Regular: el participio termina en <b>-ed</b>, igual que el pasado."],
+   ["pay → have you ___",[["paid"]],"Irregular: pay – paid – <b>paid</b> (no «payed»)."],
+   ["leave → the bus has ___",[["left"]],"Irregular: leave – left – <b>left</b>."]]},
+  {t:"15.2 ¿Qué ha pasado? Usa el present perfect", items:[
+   ["I can't find my keys. I ___ them. <span class=src>(lose)</span>",[["have lost"]],"Pasó antes y tiene un resultado ahora (no tengo las llaves) → <b>have</b> + participio: have lost.","Present perfect · resultado ahora"],
+   ["Look! Somebody ___ the mirror. <span class=src>(break)</span>",[["has broken"]],"Somebody → <b>has</b>. Participio de break: broken. El espejo está roto ahora."],
+   ["Where's Ana? — She ___ home. <span class=src>(go)</span>",[["has gone"]],"She → <b>has</b> + gone. Ahora no está aquí."],
+   ["The shop is clean now. We ___ it. <span class=src>(clean)</span>",[["have cleaned"]],"We → <b>have</b>. Clean es regular: cleaned. Resultado: está limpia."],
+   ["Marta ___ a new job. She starts on Monday. <span class=src>(find)</span>",[["has found"]],"Marta = she → <b>has</b> + found."],
+   ["I ___ some new jeans. Do you like them? <span class=src>(buy)</span>",[["have bought"]],"I → <b>have</b> + bought. Resultado: ahora los tengo.","Present perfect · resultado ahora"],
+   ["The customer ___ her bag in the fitting room. <span class=src>(leave)</span>",[["has left"]],"The customer = she → <b>has</b> + left. El bolso sigue allí."],
+   ["We ___ all the black T-shirts. <span class=src>(sell)</span>",[["have sold"]],"We → <b>have</b> + sold. Resultado: ya no quedan."],
+   ["___ you ___ the new uniform? <span class=src>(see)</span>",[["Have"],["seen"]],"Pregunta: <b>Have</b> + sujeto + participio → Have you seen…?"],
+   ["The boxes are still here. Ana ___ them. <span class=src>(not / open)</span>",[["hasn't opened"]],"Negativa: <b>hasn't</b> (has not) + participio."]]},
+  {t:"15.3 Elige has o have", items:[
+   ["I {has|have} lost my name badge.",["have"],"I → <b>have</b>."],
+   ["Ana {has|have} gone home.",["has"],"Ana = she → <b>has</b>."],
+   ["{Has|Have} the delivery arrived?",["Has"],"The delivery = it → <b>has</b>."],
+   ["We {hasn't|haven't} finished.",["haven't"],"We → <b>haven't</b>."],
+   ["{Has|Have} you paid?",["Have"],"You → <b>have</b>."],
+   ["It {has|have} stopped raining.",["has"],"It → <b>has</b>."],
+   ["The customers {has|have} left.",["have"],"The customers = they → <b>have</b>."],
+   ["Somebody {has|have} taken my pen.",["has"],"Somebody funciona como he/she → <b>has</b>."]]},
+  {t:"15.4 Corrige el error", long:true, items:[
+   ["I have buy a new coat.",["I have bought a new coat"],"Después de have va el participio: buy → <b>bought</b>."],
+   ["She have gone home.",["She has gone home"],"She → <b>has</b>, no have."],
+   ["Have you finish?",["Have you finished"],"Falta el participio: finish → <b>finished</b>."],
+   ["We has sold all the dresses.",["We have sold all the dresses"],"We → <b>have</b>, no has."],
+   ["He hasn't went to work today.",["He hasn't gone to work today"],"Went es el pasado. Con has/have va el participio: <b>gone</b>."],
+   ["Somebody has took my phone.",["Somebody has taken my phone"],"Took es el pasado. El participio es <b>taken</b>."],
+   ["Where has Marta go?",["Where has Marta gone"],"Después de has va el participio: <b>gone</b>."]]},
+  {t:"15.5 Traduce al inglés", long:true, items:[
+   ["He perdido mi tarjeta.",["I have lost my card"],"«He + -ido» = <b>have</b> + participio. Lose → lost."],
+   ["¿Has visto mis llaves?",["Have you seen my keys"],"Pregunta: <b>Have you</b> + seen."],
+   ["Ana se ha ido a casa.",["Ana has gone home"],"Ana → <b>has gone</b>. Con «home» no se pone «to»."],
+   ["Hemos vendido todos los vestidos rojos.",["We have sold all the red dresses"],"We → <b>have sold</b>. El color va delante: red dresses."],
+   ["La clienta se ha dejado el bolso.",["The customer has left her bag"],"Dejarse algo = <b>leave</b> → has left. En inglés se dice «her bag» (su bolso)."],
+   ["Alguien ha roto el espejo.",["Somebody has broken the mirror","Someone has broken the mirror"],"Somebody → <b>has broken</b>."]]}]},
+
+ {id:"u16", title:"16 · just / already / yet", ex:[
+  {t:"16.1 Elige just, already o yet", items:[
+   ["Is Ana here? — No, she's {just|yet} gone home.",["just"],"<b>Just</b> = hace muy poco. Va entre has y el participio. Yet nunca va ahí."],
+   ["Have the new jeans arrived {already|yet}?",["yet"],"En preguntas se usa <b>yet</b>, al final de la frase."],
+   ["I haven't had lunch {already|yet}.",["yet"],"En frases negativas se usa <b>yet</b> (todavía no)."],
+   ["It's only 10 o'clock and we've {already|yet} sold all the scarves.",["already"],"<b>Already</b> = ya, antes de lo esperado. Frase afirmativa."],
+   ["Do you want a coffee? — No, thanks. I've {just|yet} had one.",["just"],"Me lo acabo de tomar → <b>just</b>."],
+   ["The delivery hasn't come {just|yet}.",["yet"],"Negativa → <b>yet</b>."],
+   ["You don't need to tell Marta. I've {already|yet} told her.",["already"],"Ya se lo he dicho → <b>already</b>. Frase afirmativa."],
+   ["Where's my coffee? — Sorry, I've {just|yet} drunk it.",["just"],"Me lo acabo de beber → <b>just</b>."]]},
+  {t:"16.2 Escribe con just", items:[
+   ["Look, the bus ___. <span class=src>(just / leave)</span>",[["has just left"]],"has + <b>just</b> + participio. Leave → left."],
+   ["Is Marta here? — Yes, she ___. <span class=src>(just / arrive)</span>",[["has just arrived"]],"She → has <b>just</b> arrived."],
+   ["We ___ a new delivery. <span class=src>(just / get)</span>",[["have just got"]],"We → have <b>just</b> got (get – got – got)."],
+   ["I ___ the fitting rooms. They're clean now. <span class=src>(just / tidy)</span>",[["have just tidied"]],"I → have <b>just</b> tidied. Tidy → tidied (la y cambia a i)."],
+   ["The manager ___ the doors. We're open! <span class=src>(just / open)</span>",[["has just opened"]],"The manager = he/she → has <b>just</b> opened."],
+   ["Are you hungry? — No, I ___ lunch. <span class=src>(just / have)</span>",[["have just had"]],"I → have <b>just</b> had (have – had – had)."]]},
+  {t:"16.3 Escribe con already", items:[
+   ["Do you want to see the new collection? — No, thanks. I ___ it. <span class=src>(already / see)</span>",[["have already seen"]],"have + <b>already</b> + participio (seen)."],
+   ["Don't forget to pay. — I ___. <span class=src>(already / pay)</span>",[["have already paid"]],"I → have <b>already</b> paid."],
+   ["When is Ana going to start? — She ___. <span class=src>(already / start)</span>",[["has already started"]],"She → has <b>already</b> started."],
+   ["Shall I close the till? — Marta ___ it. <span class=src>(already / close)</span>",[["has already closed"]],"Marta → has <b>already</b> closed."],
+   ["What time are the boxes arriving? — They ___. <span class=src>(already / arrive)</span>",[["have already arrived"]],"They → have <b>already</b> arrived."]]},
+  {t:"16.4 Escribe la frase con yet", long:true, items:[
+   ["Ana / not / finish / her break",["Ana hasn't finished her break yet"],"Negativa: <b>hasn't</b> + participio … <b>yet</b> al final."],
+   ["the delivery / arrive? (pregunta)",["Has the delivery arrived yet"],"Pregunta: <b>Has</b> + sujeto + participio … <b>yet</b>?"],
+   ["I / not / have / lunch",["I haven't had lunch yet"],"<b>haven't</b> + had … <b>yet</b>."],
+   ["you / pay? (pregunta)",["Have you paid yet"],"<b>Have you</b> paid <b>yet</b>?"],
+   ["we / not / sell / any coats",["We haven't sold any coats yet"],"<b>haven't</b> + sold … <b>yet</b>. En negativa se dice «any»."],
+   ["Marta / start / her new job? (pregunta)",["Has Marta started her new job yet"],"<b>Has</b> Marta started … <b>yet</b>?"]]},
+  {t:"16.5 Traduce al inglés", long:true, items:[
+   ["Acabo de llegar.",["I have just arrived"],"«Acabo de» = <b>have just</b> + participio."],
+   ["Todavía no he comido.",["I haven't eaten yet","I haven't had lunch yet"],"«Todavía no» en present perfect = haven't … <b>yet</b> (al final)."],
+   ["¿Ya has terminado?",["Have you finished yet","Have you already finished"],"En preguntas normales: Have you finished <b>yet</b>?"],
+   ["Ya hemos cerrado la tienda.",["We have already closed the shop","We have already closed the store"],"«Ya» en afirmativa = <b>already</b>, entre have y el participio."],
+   ["Marta acaba de irse.",["Marta has just gone","Marta has just left"],"Marta → has <b>just</b> gone / left."],
+   ["El pedido todavía no ha llegado.",["The order hasn't arrived yet","The delivery hasn't arrived yet"],"hasn't arrived … <b>yet</b>."]]}]},
+
+ {id:"rep", title:"Repaso · ¿qué tiempo?", ex:[
+  {t:"R.1 Pon el verbo en el tiempo correcto", items:[
+   ["Shh! The manager ___ on the phone. <span class=src>(talk)</span>",[["is talking"]],"«Shh!» = está pasando ahora → presente continuo: <b>is talking</b>."],
+   ["I ___ my name badge. I can't find it. <span class=src>(lose)</span>",[["have lost"]],"Pasó antes y el resultado es ahora (no la encuentro) → <b>have lost</b>.","Present perfect · resultado ahora"],
+   ["I ___ my name badge yesterday, but I found it today. <span class=src>(lose)</span>",[["lost"]],"«Yesterday» = momento terminado → pasado simple: <b>lost</b>. Con yesterday nunca va el present perfect."],
+   ["At 3 o'clock yesterday I ___ the fitting rooms. <span class=src>(tidy)</span>",[["was tidying"]],"Acción en marcha a una hora del pasado → <b>was tidying</b>."],
+   ["Ana ___ at Zara. She's a shop assistant. <span class=src>(work)</span>",[["works"]],"Algo habitual, su trabajo → presente simple: <b>works</b> (she → -s)."],
+   ["When the customer came in, I ___ the shop window. <span class=src>(change)</span>",[["was changing"]],"Ya estaba cambiándolo cuando entró → <b>was changing</b>.","Pasado continuo · ya lo estaba haciendo"],
+   ["We ___ the new dresses on the rail. Look! <span class=src>(just / put)</span>",[["have just put"]],"«Just» = hace un momento → present perfect: have <b>just</b> put (put – put – put)."],
+   ["Marta ___ the shop at 10 and went home. <span class=src>(close)</span>",[["closed"]],"Dos acciones completas seguidas → pasado simple: <b>closed</b>, como «went»."],
+   ["Look! It ___. <span class=src>(snow)</span>",[["is snowing"]],"«Look!» = ahora mismo → <b>is snowing</b>."],
+   ["The customer ___ a jacket and two T-shirts. <span class=src>(buy)</span>",[["bought"]],"Compra terminada en el pasado → <b>bought</b> (irregular).","Pasado simple · compra terminada"],
+   ["___ the delivery ___ yet? <span class=src>(arrive)</span>",[["Has"],["arrived"]],"«Yet» en pregunta → present perfect: <b>Has</b> the delivery <b>arrived</b> yet?"],
+   ["I ___ on the bus when I saw my ex. <span class=src>(sit)</span>",[["was sitting"]],"Estaba sentado (acción larga) cuando le vi (momento) → <b>was sitting</b>."]]},
+  {t:"R.2 Corrige el error", long:true, items:[
+   ["I was work at 5 o'clock.",["I was working at 5 o'clock","I was working at five o'clock"],"Pasado continuo = was + verbo en <b>-ing</b>: was working."],
+   ["When the phone was ringing, I answered it.",["When the phone rang I answered it","When the phone rang I answered"],"Sonar y contestar son dos acciones cortas seguidas → pasado simple: <b>rang</b>."],
+   ["I have seen Ana yesterday.",["I saw Ana yesterday","Yesterday I saw Ana"],"Con «yesterday» (tiempo terminado) va el pasado simple: <b>saw</b>."],
+   ["The delivery has arrived yet?",["Has the delivery arrived yet"],"En la pregunta, <b>has</b> va delante del sujeto."],
+   ["She has just went home.",["She has just gone home"],"Con has va el participio: <b>gone</b>, no went."],
+   ["They was waiting for the fitting room.",["They were waiting for the fitting room"],"They → <b>were</b>."]]}]}
+];
+// Corrección: no distingue mayúsculas ni puntuación y acepta formas cortas y largas.
+// "'s" del alumno puede ser is o has (she's gone = she has gone); en las soluciones se escribe "has" entero.
+const base = s => (" " + s.toLowerCase() + " ").replace(/[’`´]/g,"'")
+  .replace(/\bt[- ]?shirt/g,"tshirt")
+  .replace(/\bcan't\b|\bcannot\b/g,"can not").replace(/\bwon't\b/g,"will not").replace(/n't\b/g," not")
+  .replace(/'m\b/g," am").replace(/'re\b/g," are").replace(/'ve\b/g," have")
+  .replace(/[.,!?¿¡—–-]/g," ");
+const tidy = s => s.replace(/\s+/g," ").trim();
+const normAns = s => tidy(base(s).replace(/'s\b/g," is"));
+const normUser = s => { const b = base(s); return [tidy(b.replace(/'s\b/g," is")), tidy(b.replace(/'s\b/g," has"))]; };
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const app = document.getElementById("app"), nav = document.getElementById("nav");
+const results = new Map();
+let uid = 0;
+const QWORD = /^(do|does|did|are|is|am|was|were|has|have|can|where|what|how|who|why|when)\b/i;
+
+SECTIONS.forEach(sec => {
+  nav.insertAdjacentHTML("beforeend", `<a href="#${sec.id}">${sec.title}</a>`);
+  const h = document.createElement("h2"); h.id = sec.id; h.textContent = sec.title;
+  app.append(h);
+  sec.ex.forEach(ex => {
+    const box = document.createElement("section"); box.className = "ex";
+    box.innerHTML = `<h3><span>${ex.t}</span><span class="res" aria-live="polite"></span></h3><ol></ol>
+      <div class="actions"><button class="btn" type="button" data-a="check">Corregir</button><button class="btn ghost" type="button" data-a="reset">Borrar</button></div>`;
+    const ol = box.querySelector("ol"); const items = [];
+    ex.items.forEach(([tpl, ans, why, tense]) => {
+      const li = document.createElement("li"); const gaps = [];
+      const chip = tense ? `<span class="tense">⏱ ${esc(tense)}</span>` : "";
+      if (ex.long) {
+        const id = "g" + (++uid);
+        li.innerHTML = `${chip}<label for="${id}">${esc(tpl)}</label><input class="long" type="text" id="${id}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">`;
+        gaps.push({kind:"text", el: li.querySelector("input"), ok: ans, show: ans[0] + (QWORD.test(ans[0]) ? "?" : ".")});
+      } else {
+        let i = 0;
+        li.innerHTML = chip + tpl.replace(/___|\{([^}]+)\}/g, (m, opts) => {
+          const id = "g" + (++uid);
+          if (m === "___") return `<input type="text" id="${id}" data-i="${i++}" aria-label="Hueco" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">`;
+          return `<span class="choice" role="group" id="${id}" data-i="${i++}">${opts.split("|").map(o=>`<button type="button" aria-pressed="false">${o}</button>`).join("")}</span>`;
+        });
+        li.querySelectorAll("[data-i]").forEach(el => {
+          const a = ans[+el.dataset.i];
+          if (el.tagName === "INPUT") {
+            el.style.width = Math.max(5, a[0].length + 2) + "ch";
+            gaps.push({kind:"text", el, ok: a, show: a[0]});
+          } else {
+            gaps.push({kind:"choice", el, ok: a, show: a});
+            el.addEventListener("click", e => {
+              const b = e.target.closest("button"); if (!b) return;
+              el.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+            });
+          }
+        });
+      }
+      items.push({li, gaps, why});
+      ol.append(li);
+    });
+    const allGaps = items.flatMap(it => it.gaps);
+    const res = box.querySelector(".res");
+    const clearMarks = () => { box.querySelectorAll(".fix,.why").forEach(f=>f.remove()); allGaps.forEach(g=>g.el.classList.remove("ok","bad")); res.textContent=""; res.className="res"; };
+    const check = () => {
+      clearMarks(); let good = 0;
+      items.forEach(it => {
+        let wrong = false;
+        it.gaps.forEach(g => {
+          let right;
+          if (g.kind === "text") { const u = normUser(g.el.value); right = g.ok.some(o => u.includes(normAns(o))); }
+          else { const p = g.el.querySelector('[aria-pressed="true"]'); right = !!p && p.textContent === g.ok; }
+          g.el.classList.add(right ? "ok" : "bad");
+          if (right) good++;
+          else { wrong = true; g.el.insertAdjacentHTML("afterend", `<span class="fix${g.el.classList.contains("long") ? " block" : ""}">→ ${esc(g.show)}</span>`); }
+        });
+        if (wrong && it.why) it.li.insertAdjacentHTML("beforeend", `<p class="why"><b>Por qué:</b> ${it.why}</p>`);
+      });
+      const r = good / allGaps.length;
+      res.textContent = `${good} / ${allGaps.length}`; res.classList.add(r === 1 ? "good" : r >= .5 ? "mid" : "low");
+      results.set(box, [good, allGaps.length]); updateTotal();
+    };
+    const reset = () => { clearMarks(); allGaps.forEach(g => g.kind === "text" ? g.el.value = "" : g.el.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed","false"))); results.delete(box); updateTotal(); };
+    box.querySelector('[data-a="check"]').onclick = check;
+    box.querySelector('[data-a="reset"]').onclick = reset;
+    box.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.tagName === "INPUT") check(); });
+    box._check = check; box._reset = reset;
+    app.append(box);
+  });
+});
+function updateTotal(){ let g=0,t=0; results.forEach(([a,b])=>{g+=a;t+=b}); document.getElementById("total").textContent = `${g} / ${t}`; }
+document.getElementById("checkAll").onclick = () => document.querySelectorAll(".ex").forEach(b => b._check());
+document.getElementById("resetAll").onclick = () => document.querySelectorAll(".ex").forEach(b => b._reset());
+</script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
+<button class="refrescar" type="button" onclick="location.reload()" aria-label="Actualizar la página">↻ Actualizar</button>
+</body>
+</html>

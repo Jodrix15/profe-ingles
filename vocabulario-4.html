@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Inglés">
+<meta name="theme-color" content="#2747c9">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Vocabulario · Ficha 4</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: una tarjeta grande en el centro que se gira al tocarla; debajo, la lista completa por temas */
+:root{
+  --paper:#fbfaf6; --sheet:#ffffff; --ink:#1d2433; --muted:#5e6678; --line:#dfe2ea;
+  --accent:#2747c9; --accent-soft:#e8ecfb; --ok:#1f7a4a; --ok-soft:#e3f3ea; --bad:#c42b2b; --bad-soft:#fbe7e6;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --ok:#5fd093; --ok-soft:#173326; --bad:#ff7d74; --bad-soft:#3a1d1d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --ok:#5fd093; --ok-soft:#173326; --bad:#ff7d74; --bad-soft:#3a1d1d; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;padding:0 16px}
+.wrap{max-width:720px;margin:0 auto;padding-block:max(28px,env(safe-area-inset-top)) 64px}
+.volver{display:none;font-size:.95rem;color:var(--accent);text-decoration:none;margin-bottom:12px}
+@media (display-mode: standalone){.volver{display:inline-block}}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,4vw,2.3rem);line-height:1.1;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:6px 0 0}
+h2{font-family:var(--display);font-weight:700;font-size:1.3rem;margin:36px 0 10px}
+.bar{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
+.chip{font:inherit;font-size:.88rem;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:700}
+.chip:focus-visible,.btn:focus-visible,.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin:14px 0 10px}
+.count{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.95rem}
+.count b{color:var(--ink)}
+.progress{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:14px}
+.progress i{display:block;height:100%;width:0;background:var(--ok);transition:width .25s}
+.scene{perspective:1200px}
+.card{position:relative;width:100%;min-height:260px;border:0;padding:0;background:none;cursor:pointer;font:inherit;color:inherit;
+  transform-style:preserve-3d;transition:transform .45s ease;display:block}
+.card.flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--sheet);border:1px solid var(--line);border-radius:16px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 20px;gap:8px}
+.face.back{transform:rotateY(180deg);background:var(--accent-soft);border-color:var(--accent)}
+.tag{position:absolute;top:12px;left:16px;font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.word{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,6vw,2.4rem);line-height:1.15;text-wrap:balance}
+.ex{font-style:italic;color:var(--muted);max-width:40ch}
+.hint{position:absolute;bottom:12px;font-size:.8rem;color:var(--muted)}
+.speak{position:absolute;top:8px;right:10px;font:inherit;font-size:1.2rem;background:none;border:0;cursor:pointer;padding:6px;border-radius:8px;color:var(--accent)}
+.answer{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.btn{font:inherit;font-weight:700;font-size:1rem;padding:12px 16px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:var(--sheet);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.no{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.btn.si{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.btn.sm{font-size:.88rem;padding:6px 12px;border-radius:8px}
+.done{background:var(--sheet);border:1px solid var(--line);border-radius:16px;padding:28px 20px;text-align:center}
+.done p{margin:0 0 14px}
+.done .big{font-family:var(--display);font-size:1.6rem;font-weight:700;color:var(--ok)}
+.done .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+details{background:var(--sheet);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+summary{cursor:pointer;padding:12px 16px;font-weight:700}
+summary span{color:var(--muted);font-weight:400}
+.tbl{overflow-x:auto;padding:0 16px 10px}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:700;white-space:nowrap}
+td:last-child{color:var(--muted);font-style:italic}
+.refrescar{display:none;position:fixed;z-index:20;top:calc(env(safe-area-inset-top, 0px) + 10px);right:calc(env(safe-area-inset-right, 0px) + 12px);
+  font:inherit;font-size:.9rem;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);color:var(--accent);cursor:pointer}
+.refrescar:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (display-mode: standalone){.refrescar{display:block}}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="volver" href="./">‹ Todas las fichas</a>
+  <h1>Vocabulario · Ficha 4</h1>
+  <p class="sub">Toca la tarjeta para darle la vuelta. Marca <b>Lo sé</b> o <b>Otra vez</b>: las que no sepas vuelven a salir al final.</p>
+
+  <div class="bar" id="decks" role="group" aria-label="Temas"></div>
+  <div class="tools">
+    <div class="bar" id="dir" role="group" aria-label="Dirección" style="margin:0">
+      <button class="chip" type="button" data-dir="en" aria-pressed="true">Inglés → Español</button>
+      <button class="chip" type="button" data-dir="es" aria-pressed="false">Español → Inglés</button>
+    </div>
+    <button class="btn ghost sm" type="button" id="shuffle">Barajar de nuevo</button>
+  </div>
+
+  <div class="count" aria-live="polite" id="count"></div>
+  <div class="progress"><i id="bar"></i></div>
+
+  <div id="play">
+    <div class="scene">
+      <button class="card" id="card" type="button" aria-label="Tarjeta: toca para girar">
+        <div class="face front"><span class="tag" id="tagF"></span><div class="word" id="wordF"></div><div class="hint">Toca para girar</div></div>
+        <div class="face back"><span class="tag" id="tagB"></span><div class="word" id="wordB"></div><div class="ex" id="exB"></div></div>
+      </button>
+    </div>
+    <div class="answer">
+      <button class="btn no" type="button" id="again">Otra vez</button>
+      <button class="btn si" type="button" id="know">Lo sé</button>
+    </div>
+    <p style="text-align:center;margin:12px 0 0"><button class="btn ghost sm" type="button" id="speak">🔊 Escuchar en inglés</button></p>
+  </div>
+  <div class="done" id="done" hidden>
+    <p class="big">¡Terminado!</p>
+    <p id="doneTxt"></p>
+    <div class="row"><button class="btn" type="button" id="restart">Empezar otra vez</button></div>
+  </div>
+
+  <h2>Lista completa</h2>
+  <div id="list"></div>
+</div>
+
+<script>
+// [inglés, español, ejemplo]
+const DECKS = [
+ {id:"tienda", name:"En la tienda", cards:[
+  ["till","caja (donde se cobra)","Ana was working at the till at 3 o'clock."],
+  ["fitting room","probador","I was tidying the fitting rooms."],
+  ["hanger","percha","She was putting clothes on hangers."],
+  ["rail","burro, barra para colgar ropa","We've just put the new dresses on the rail."],
+  ["name badge","chapa / placa con el nombre","They weren't wearing their name badges."],
+  ["delivery","pedido, entrega de mercancía","Has the delivery arrived yet?"],
+  ["box / boxes","caja / cajas (de cartón)","At 9.30 she was unpacking boxes."],
+  ["ladder","escalera de mano","Ana fell off the ladder."],
+  ["top shelf","el estante de arriba","She was putting jeans on the top shelf."],
+  ["mirror","espejo","Somebody has broken the mirror."],
+  ["alarm","alarma","The alarm rang."],
+  ["wallet","cartera","I found a wallet in the fitting room."],
+  ["the new collection","la nueva colección","Have you seen the new collection?"],
+  ["manager / boss","encargado, gerente / jefe","My boss was talking on the phone."],
+  ["shop assistant","dependiente / dependienta","Ana is a shop assistant."]]},
+ {id:"ropa", name:"Ropa", cards:[
+  ["coat","abrigo","She was hanging up a coat."],
+  ["jacket","chaqueta","The customer bought a jacket."],
+  ["suit","traje","The manager was wearing a black suit."],
+  ["skirt","falda","Yesterday I was wearing a black skirt."],
+  ["dress / dresses","vestido / vestidos","We've sold all the red dresses."],
+  ["scarf / scarves","bufanda, pañuelo / bufandas","We've already sold all the scarves."],
+  ["T-shirt","camiseta","I was folding T-shirts."],
+  ["jeans","vaqueros","Marta was folding jeans."],
+  ["uniform","uniforme","Have you seen the new uniform?"]]},
+ {id:"verbos", name:"Verbos de trabajo", cards:[
+  ["to fold","doblar","I was folding T-shirts in the stockroom."],
+  ["to unpack","desembalar, sacar de la caja","She was unpacking boxes."],
+  ["to tidy","ordenar, recoger","We were tidying the fitting rooms."],
+  ["to hang up","colgar (ropa)","She was hanging up a coat."],
+  ["to try on","probarse","The customer was trying on a jacket."],
+  ["to serve","atender (a un cliente)","I was serving a customer when the phone rang."],
+  ["to ring","sonar (teléfono, alarma)","The phone was ringing."],
+  ["to fall off","caerse (de algo)","She fell off the ladder."],
+  ["to come in","entrar","A customer came in."],
+  ["to leave","irse, salir; dejarse algo","The customer has left her bag."],
+  ["to arrive","llegar","They've just arrived."],
+  ["to start / to finish","empezar / terminar","I started work at 9 and finished at 5."],
+  ["to cut your finger","cortarse el dedo","How did you cut your finger?"],
+  ["to go out","apagarse (la luz); salir","The lights went out."]]},
+ {id:"irreg", name:"Verbos irregulares", cards:[
+  ["buy · bought · bought","comprar","I've bought some new jeans."],
+  ["sell · sold · sold","vender","We've sold all the black T-shirts."],
+  ["lose · lost · lost","perder","I've lost my keys."],
+  ["find · found · found","encontrar","Marta has found a new job."],
+  ["see · saw · seen","ver","Have you seen my keys?"],
+  ["go · went · gone","ir","Ana has gone home."],
+  ["do · did · done","hacer","What have you done?"],
+  ["take · took · taken","coger, llevarse","Somebody has taken my pen."],
+  ["break · broke · broken","romper","Somebody has broken the mirror."],
+  ["forget · forgot · forgotten","olvidar","I've forgotten her name."],
+  ["wear · wore · worn","llevar puesto","She hasn't worn it yet."],
+  ["pay · paid · paid","pagar","Have you paid yet?"],
+  ["leave · left · left","irse; dejarse","The bus has just left."],
+  ["have · had · had","tener; tomar","I've just had lunch."],
+  ["give · gave · given","dar","She gave it to the manager."],
+  ["get · got · got","conseguir, recibir; llegar","We've just got a new delivery."],
+  ["put · put · put","poner","We've just put the dresses on the rail."],
+  ["tell · told · told","decir, contar","I've already told her."],
+  ["drink · drank · drunk","beber","Sorry, I've just drunk it."]]},
+ {id:"pistas", name:"Palabras pista", cards:[
+  ["at 5 o'clock yesterday","ayer a las 5","At 5 o'clock yesterday I was working."],
+  ["this time last year","el año pasado por estas fechas","This time last year I was working in a restaurant."],
+  ["when","cuando","I was having lunch when my boss called."],
+  ["while","mientras","She fell while she was running."],
+  ["just","acabar de; hace un momento","She's just gone home."],
+  ["already","ya","We've already sold all the scarves."],
+  ["yet","todavía (no); ya (en preguntas)","The delivery hasn't arrived yet."],
+  ["Not yet.","Todavía no.","Have you finished? — Not yet."],
+  ["still","todavía, aún","The boxes are still here."],
+  ["somebody / someone","alguien","Somebody has taken my phone."]]},
+ {id:"frases", name:"Frases útiles", cards:[
+  ["What were you doing?","¿Qué estabas haciendo?","What were you doing at 8 o'clock?"],
+  ["Sorry, I wasn't listening.","Perdona, no estaba escuchando.","Sorry, I wasn't listening. Can you say that again?"],
+  ["Can you say that again?","¿Puedes repetirlo?","Sorry, can you say that again?"],
+  ["What happened?","¿Qué pasó? / ¿Qué ha pasado?","What happened? — I cut my finger."],
+  ["Have you finished yet?","¿Ya has terminado?","Have you finished yet? — Not yet."],
+  ["She's just gone.","Se acaba de ir.","Is Ana here? — No, she's just gone."],
+  ["I've already paid.","Ya he pagado.","Don't forget to pay. — I've already paid."],
+  ["We're open!","¡Ya hemos abierto!","The manager has just opened the doors. We're open!"],
+  ["Shall I …?","¿Quieres que (yo) …?","Shall I close the till?"],
+  ["Don't forget to …","No te olvides de …","Don't forget to pay."]]}
+];
+const $ = id => document.getElementById(id);
+let deck = "todas", dir = "en", queue = [], total = 0, known = 0, again = new Set(), cur = null;
+
+const cardsOf = id => id === "todas" ? DECKS.flatMap(d => d.cards.map(c => [...c, d.name])) : DECKS.find(d => d.id === id).cards.map(c => [...c, DECKS.find(d=>d.id===id).name]);
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+function start(list){
+  queue = shuffle(list ? [...list] : cardsOf(deck)); total = queue.length; known = 0; again = new Set();
+  $("play").hidden = false; $("done").hidden = true; show();
+}
+function show(){
+  const wasFlipped = $("card").classList.contains("flip");
+  $("card").classList.remove("flip");
+  if (!queue.length) return finish();
+  cur = queue[0];
+  const [en, es, ex, cat] = cur;
+  const front = dir === "en" ? en : es, back = dir === "en" ? es : en;
+  // espera al giro para no ver la respuesta de la siguiente tarjeta
+  setTimeout(() => {
+    $("tagF").textContent = cat; $("tagB").textContent = cat;
+    $("wordF").textContent = front; $("wordB").textContent = back; $("exB").textContent = ex;
+  }, wasFlipped ? 200 : 0);
+  $("count").innerHTML = `<b>${known}</b> de ${total} sabidas · quedan ${queue.length}`;
+  $("bar").style.width = (total ? known / total * 100 : 0) + "%";
+}
+function finish(){
+  $("play").hidden = true; $("done").hidden = false;
+  $("count").innerHTML = `<b>${known}</b> de ${total} sabidas`; $("bar").style.width = "100%";
+  $("doneTxt").textContent = again.size ? `Has repasado ${again.size} palabra${again.size>1?"s":""} más de una vez.` : "¡Todas a la primera!";
+}
+$("card").onclick = () => $("card").classList.toggle("flip");
+$("know").onclick = () => { if (!cur) return; queue.shift(); known++; show(); };
+$("again").onclick = () => { if (!cur) return; queue.push(queue.shift()); again.add(cur[0]); show(); };
+$("shuffle").onclick = () => start();
+$("restart").onclick = () => start();
+function speak(){
+  if (!cur || !("speechSynthesis" in window)) return;
+  const u = new SpeechSynthesisUtterance(cur[0].replace(/\s*[\/·]\s*/g, ", ").replace("…", ""));
+  u.lang = "en-GB"; u.rate = .9; speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+$("speak").onclick = speak;
+if (!("speechSynthesis" in window)) $("speak").hidden = true;
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "BUTTON" && (e.key === " " || e.key === "Enter")) return;
+  if (e.key === " ") { e.preventDefault(); $("card").classList.toggle("flip"); }
+  if (e.key === "ArrowRight") $("know").click();
+  if (e.key === "ArrowLeft") $("again").click();
+});
+
+// chips de temas
+const decksEl = $("decks");
+[{id:"todas", name:"Todas", cards:DECKS.flatMap(d=>d.cards)}, ...DECKS].forEach(d => {
+  decksEl.insertAdjacentHTML("beforeend", `<button class="chip" type="button" data-id="${d.id}" aria-pressed="${d.id==="todas"}">${d.name} · ${d.cards.length}</button>`);
+});
+decksEl.onclick = e => { const b = e.target.closest("button"); if (!b) return;
+  deck = b.dataset.id; decksEl.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); start(); };
+$("dir").onclick = e => { const b = e.target.closest("button"); if (!b) return;
+  dir = b.dataset.dir; $("dir").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); show(); };
+
+// lista completa
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+$("list").innerHTML = DECKS.map(d => `<details><summary>${d.name} <span>· ${d.cards.length} palabras</span></summary><div class="tbl"><table>${
+  d.cards.map(([en,es,ex]) => `<tr><td>${esc(en)}</td><td>${esc(es)}</td><td>${esc(ex)}</td></tr>`).join("")}</table></div></details>`).join("");
+
+start();
+</script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
+<button class="refrescar" type="button" onclick="location.reload()" aria-label="Actualizar la página">↻ Actualizar</button>
+</body>
+</html>

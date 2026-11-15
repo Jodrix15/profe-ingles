@@ -17,11 +17,13 @@ Fichas interactivas de inglés para mis clases particulares: examen de nivel, ej
 | Fichas | `ficha-ingles.html` | Ficha 1: pronombres, posesivos y *do* |
 | Fichas | `ficha-2.html` | Ficha 2: *be* y presente, con frases de tienda y de viaje |
 | Fichas | `ficha-3.html` | Ficha 3: unidades 8 y 10 (*I am doing / I do* y *was/were*) |
+| Fichas | `ficha-4.html` | Ficha 4: unidades 13–16 (pasado continuo, *I was doing / I did*, *present perfect*, *just/already/yet*) |
 | Teoría | `teoria-1.html` | Lo necesario para resolver la ficha 1 |
 | Teoría | `teoria-2.html` | Unidades 1–7: *to be*, presente continuo y presente simple |
 | Teoría | `teoria-3.html` | Unidades 8 y 10: presente continuo o simple, y *was/were* |
 | Vocabulario | `vocabulario.html` | Flashcards de tienda, ropa, viajes y verbos |
 | Vocabulario | `vocabulario-3.html` | Flashcards de la ficha 3 |
+| Vocabulario | `vocabulario-4.html` | Flashcards de la ficha 4 |
 
 ## Instalar en el móvil
 
