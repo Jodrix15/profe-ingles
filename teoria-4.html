@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Inglés">
+<meta name="theme-color" content="#2747c9">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Teoría · Unidades 13–16</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: apuntes de clase en una columna; cada bloque dice a qué unidad del libro corresponde */
+:root{
+  --paper:#fbfaf6; --sheet:#ffffff; --ink:#1d2433; --muted:#5e6678; --line:#dfe2ea;
+  --accent:#2747c9; --accent-soft:#e8ecfb; --bad:#c42b2b; --ok:#1f7a4a;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --bad:#ff7d74; --ok:#5fd093; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12151c; --sheet:#1a1e27; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3240;
+  --accent:#8ea2ff; --accent-soft:#232b4a; --bad:#ff7d74; --ok:#5fd093; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding:0 16px}
+.wrap{max-width:720px;margin:0 auto;padding-block:max(28px,env(safe-area-inset-top)) 64px}
+.volver{display:none;font-size:.95rem;color:var(--accent);text-decoration:none;margin-bottom:12px}
+@media (display-mode: standalone){.volver{display:inline-block}}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,4vw,2.3rem);line-height:1.1;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:6px 0 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);display:flex;gap:6px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--line);margin:18px 0 8px}
+nav a{font-size:.88rem;text-decoration:none;color:var(--ink);padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--sheet)}
+nav a:hover,nav a:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+section{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:18px 18px 8px;margin-top:18px;scroll-margin-top:70px}
+h2{font-family:var(--display);font-weight:700;font-size:1.3rem;margin:0 0 4px}
+.para{display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.02em;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:2px 10px;margin-bottom:10px}
+h3{font-size:1rem;margin:16px 0 6px}
+p{margin:0 0 12px;max-width:65ch}
+ul{margin:0 0 12px;padding-left:1.2em}
+li{margin-bottom:4px}
+.tbl{overflow-x:auto;margin:0 0 14px}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--accent);font-weight:700;white-space:nowrap}
+td b{color:var(--ink)}
+.no{color:var(--bad);text-decoration:line-through}
+.si{color:var(--ok);font-weight:700}
+.ej{font-style:italic}
+.formula{font-family:var(--display);font-weight:700;font-size:1.1rem;background:var(--accent-soft);color:var(--accent);border-radius:8px;padding:8px 12px;margin:0 0 14px;display:inline-block}
+.refrescar{display:none;position:fixed;z-index:20;top:calc(env(safe-area-inset-top, 0px) + 10px);right:calc(env(safe-area-inset-right, 0px) + 12px);
+  font:inherit;font-size:.9rem;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--sheet);color:var(--accent);cursor:pointer}
+.refrescar:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (display-mode: standalone){.refrescar{display:block}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="volver" href="./">‹ Todas las fichas</a>
+  <h1>Teoría · Unidades 13–16</h1>
+  <p class="sub">Resumen de las unidades 13–16 de <i>Essential Grammar in Use</i>: el pasado continuo (<i>I was doing</i>), cuándo usarlo y cuándo el pasado simple, el <i>present perfect</i> (<i>I have done</i>) y <i>just / already / yet</i>.</p>
+
+  <nav aria-label="Unidades">
+    <a href="#u13">13 · I was doing</a><a href="#u14">14 · was doing / did</a>
+    <a href="#u15">15 · I have done</a><a href="#u16">16 · just / already / yet</a><a href="#guia">¿Qué tiempo uso?</a>
+  </nav>
+
+  <section id="u13">
+    <h2>Pasado continuo: <i>I was doing</i></h2>
+    <span class="para">Unidad 13</span>
+    <p>Sirve para decir que algo <b>estaba pasando</b> en un momento del pasado: había empezado antes y aún no había terminado. En español: "estaba trabajando", "estaba lloviendo".</p>
+    <p class="formula">was / were + verbo-ing</p>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Afirmativa</th><th>Negativa</th><th>Pregunta</th></tr></thead>
+      <tbody>
+        <tr><th>I / he / she / it</th><td>I <b>was</b> working.</td><td>I <b>wasn't</b> working.</td><td><b>Was</b> she working?</td></tr>
+        <tr><th>we / you / they</th><td>They <b>were</b> working.</td><td>They <b>weren't</b> working.</td><td><b>Were</b> you working?</td></tr>
+      </tbody></table></div>
+    <p>Es igual que el presente continuo, pero cambiando <i>am / is / are</i> por <i>was / were</i>:</p>
+    <ul>
+      <li><span class="ej">I'<b>m</b> working now.</span> → <span class="ej">I <b>was</b> working at 10 o'clock last night.</span></li>
+      <li><span class="ej">What <b>are</b> you doing?</span> → <span class="ej">What <b>were</b> you doing at 3 o'clock?</span></li>
+      <li><span class="ej">At 9.30 Lucía <b>was unpacking</b> boxes.</span> (empezó a las 9 y terminó a las 10)</li>
+      <li><span class="ej">Today she's wearing a skirt, but yesterday she <b>was wearing</b> jeans.</span></li>
+      <li><span class="ej">Sorry, I <b>wasn't listening</b>.</span></li>
+    </ul>
+    <h3>Pistas</h3>
+    <p><b>at 5 o'clock yesterday</b> (ayer a las 5) · <b>at 10 last night</b> · <b>this time last year</b> (el año pasado por estas fechas) · <b>while</b> (mientras).</p>
+    <h3>Cómo se escribe el -ing</h3>
+    <ul>
+      <li>Casi siempre se añade -ing: work → work<b>ing</b>, fold → fold<b>ing</b>.</li>
+      <li>Si acaba en -e, se quita la e: serve → serv<b>ing</b>, have → hav<b>ing</b>.</li>
+      <li>Si acaba en vocal + consonante (corto), se dobla: put → pu<b>tting</b>, run → ru<b>nning</b>, sit → si<b>tting</b>.</li>
+    </ul>
+  </section>
+
+  <section id="u14">
+    <h2>¿<i>I was doing</i> o <i>I did</i>?</h2>
+    <span class="para">Unidad 14</span>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Pasado continuo<br><i>I was doing</i></th><th>Pasado simple<br><i>I did</i></th></tr></thead>
+      <tbody>
+        <tr><th>¿Qué cuenta?</th><td>Una acción <b>en marcha</b>, sin terminar</td><td>Una acción <b>completa</b>, de principio a fin</td></tr>
+        <tr><th>En español</th><td>"estaba atendiendo"</td><td>"atendí"</td></tr>
+        <tr><th>Ejemplo</th><td class="ej">At 2.30 I was working.</td><td class="ej">I started work at 9 and finished at 5.</td></tr>
+      </tbody></table></div>
+    <h3>La clave: una acción larga cortada por otra corta</h3>
+    <p>Cuando se juntan las dos, la acción <b>larga</b> (la que ya estaba pasando) va en pasado continuo y la <b>corta</b> (la que la interrumpe) en pasado simple.</p>
+    <p class="formula">larga: was / were + -ing · corta: pasado simple</p>
+    <ul>
+      <li><span class="ej">I <b>was serving</b> a customer when the phone <b>rang</b>.</span> → estaba atendiendo (larga) cuando sonó (corta).</li>
+      <li><span class="ej">Ana <b>fell</b> off the ladder while she <b>was putting</b> jeans on the top shelf.</span></li>
+      <li><span class="ej">It <b>was raining</b> when I <b>left</b> work.</span> → ya llovía antes de salir.</li>
+      <li><b>When</b> (cuando) suele ir con la acción corta; <b>while</b> (mientras) con la larga.</li>
+    </ul>
+    <h3>Ojo: cambia el significado</h3>
+    <ul>
+      <li><span class="ej">When I arrived, Marta <b>was opening</b> the boxes.</span> → ya estaba abriéndolas cuando llegué.</li>
+      <li><span class="ej">When I arrived, Marta <b>opened</b> the boxes.</span> → llegué y entonces las abrió.</li>
+    </ul>
+    <h3>Dos acciones cortas seguidas → las dos en pasado simple</h3>
+    <ul>
+      <li><span class="ej">The customer <b>paid</b> and <b>left</b>.</span></li>
+      <li><span class="no">When the phone was ringing, I answered it.</span> → <span class="si">When the phone rang, I answered it.</span></li>
+    </ul>
+  </section>
+
+  <section id="u15">
+    <h2>Present perfect: <i>I have done</i></h2>
+    <span class="para">Unidad 15</span>
+    <p>Sirve para algo que <b>pasó antes</b> y tiene un <b>resultado ahora</b>. En español suele ser "he hecho, has perdido, se ha ido".</p>
+    <p class="formula">have / has + participio</p>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Afirmativa</th><th>Negativa</th><th>Pregunta</th></tr></thead>
+      <tbody>
+        <tr><th>I / we / you / they</th><td>I <b>have</b> ('ve) lost it.</td><td>I <b>haven't</b> lost it.</td><td><b>Have</b> you lost it?</td></tr>
+        <tr><th>he / she / it</th><td>She <b>has</b> ('s) gone.</td><td>She <b>hasn't</b> gone.</td><td><b>Has</b> she gone?</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li><span class="ej">I'<b>ve lost</b> my keys.</span> → ahora no las tengo.</li>
+      <li><span class="ej">Where's Ana? — She'<b>s gone</b> home.</span> → ahora no está.</li>
+      <li><span class="ej">We'<b>ve sold</b> all the black T-shirts.</span> → ahora no quedan.</li>
+      <li><span class="ej">Somebody <b>has broken</b> the mirror.</span> → ahora está roto.</li>
+    </ul>
+    <h3>El participio (la 3.ª columna)</h3>
+    <p>En los verbos <b>regulares</b> es igual que el pasado, con <b>-ed</b>: clean → cleaned, close → closed, tidy → tidied. Los <b>irregulares</b> hay que aprenderlos:</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Verbo</th><th>Pasado</th><th>Participio</th><th>Significa</th></tr></thead>
+      <tbody>
+        <tr><td>buy</td><td>bought</td><td><b>bought</b></td><td>comprar</td></tr>
+        <tr><td>sell</td><td>sold</td><td><b>sold</b></td><td>vender</td></tr>
+        <tr><td>lose</td><td>lost</td><td><b>lost</b></td><td>perder</td></tr>
+        <tr><td>find</td><td>found</td><td><b>found</b></td><td>encontrar</td></tr>
+        <tr><td>pay</td><td>paid</td><td><b>paid</b></td><td>pagar</td></tr>
+        <tr><td>leave</td><td>left</td><td><b>left</b></td><td>irse; dejarse</td></tr>
+        <tr><td>have</td><td>had</td><td><b>had</b></td><td>tener; tomar</td></tr>
+        <tr><td>see</td><td>saw</td><td><b>seen</b></td><td>ver</td></tr>
+        <tr><td>go</td><td>went</td><td><b>gone</b></td><td>ir</td></tr>
+        <tr><td>do</td><td>did</td><td><b>done</b></td><td>hacer</td></tr>
+        <tr><td>take</td><td>took</td><td><b>taken</b></td><td>coger, llevarse</td></tr>
+        <tr><td>break</td><td>broke</td><td><b>broken</b></td><td>romper</td></tr>
+        <tr><td>forget</td><td>forgot</td><td><b>forgotten</b></td><td>olvidar</td></tr>
+        <tr><td>wear</td><td>wore</td><td><b>worn</b></td><td>llevar puesto</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li><span class="no">She has went home.</span> → <span class="si">She has gone home.</span> (con has/have nunca va el pasado)</li>
+      <li><span class="no">She have gone.</span> → <span class="si">She has gone.</span> (he / she / it → <b>has</b>)</li>
+      <li><i>She's gone</i> = she <b>has</b> gone. El <i>'s</i> puede ser <i>is</i> o <i>has</i>: si detrás va un participio, es <i>has</i>.</li>
+    </ul>
+    <h3>Ojo: nunca con una fecha terminada</h3>
+    <p>Si dices <b>cuándo</b> pasó (yesterday, last week, at 5 o'clock), usa el pasado simple:</p>
+    <ul>
+      <li><span class="no">I have seen Ana yesterday.</span> → <span class="si">I saw Ana yesterday.</span></li>
+    </ul>
+  </section>
+
+  <section id="u16">
+    <h2><i>just</i>, <i>already</i> y <i>yet</i></h2>
+    <span class="para">Unidad 16</span>
+    <div class="tbl"><table>
+      <thead><tr><th>Palabra</th><th>Significa</th><th>Dónde va</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td><b>just</b></td><td>hace un momento ("acabar de")</td><td>entre have/has y el participio</td><td class="ej">She's just gone home.</td></tr>
+        <tr><td><b>already</b></td><td>ya (antes de lo esperado)</td><td>entre have/has y el participio</td><td class="ej">We've already sold all the scarves.</td></tr>
+        <tr><td><b>yet</b></td><td>todavía no (negativa) · ya (pregunta)</td><td>al final de la frase</td><td class="ej">The delivery hasn't arrived yet.</td></tr>
+      </tbody></table></div>
+    <ul>
+      <li><b>Just</b>: <span class="ej">Are you hungry? — No, I'<b>ve just</b> had lunch.</span> (acabo de comer)</li>
+      <li><b>Already</b>: <span class="ej">Don't forget to pay. — I'<b>ve already</b> paid.</span> (ya he pagado)</li>
+      <li><b>Yet</b> en negativa: <span class="ej">I <b>haven't</b> had lunch <b>yet</b>.</span> (todavía no he comido)</li>
+      <li><b>Yet</b> en pregunta: <span class="ej"><b>Have</b> you finished <b>yet</b>? — No, not yet.</span> (¿ya has terminado? — Todavía no)</li>
+    </ul>
+    <h3>Truco</h3>
+    <ul>
+      <li>Frase afirmativa → <b>just</b> o <b>already</b>. Negativa o pregunta → <b>yet</b>.</li>
+      <li><span class="no">I haven't had lunch already.</span> → <span class="si">I haven't had lunch yet.</span></li>
+      <li><span class="no">She's yet gone.</span> → <span class="si">She's just gone.</span></li>
+    </ul>
+  </section>
+
+  <section id="guia">
+    <h2>¿Qué tiempo uso?</h2>
+    <span class="para">Repaso</span>
+    <p>Busca las <b>palabras pista</b> de la frase:</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Si ves…</th><th>Usa…</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td>now, Look!, Shh!</td><td>Presente continuo</td><td class="ej">Look! It's raining.</td></tr>
+        <tr><td>every day, usually, always</td><td>Presente simple</td><td class="ej">I work on Saturdays.</td></tr>
+        <tr><td>yesterday, last…, … ago</td><td>Pasado simple</td><td class="ej">I lost my phone yesterday.</td></tr>
+        <tr><td>at 5 o'clock yesterday, while</td><td>Pasado continuo</td><td class="ej">At 5 I was serving a customer.</td></tr>
+        <tr><td>when + acción corta</td><td>Larga: pasado continuo · corta: pasado simple</td><td class="ej">I was folding jeans when she called.</td></tr>
+        <tr><td>just, already, yet, resultado ahora</td><td>Present perfect</td><td class="ej">She has just gone home.</td></tr>
+      </tbody></table></div>
+  </section>
+</div>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
+<button class="refrescar" type="button" onclick="location.reload()" aria-label="Actualizar la página">↻ Actualizar</button>
+</body>
+</html>

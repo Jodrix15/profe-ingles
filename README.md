@@ -21,6 +21,7 @@ Fichas interactivas de inglés para mis clases particulares: examen de nivel, ej
 | Teoría | `teoria-1.html` | Lo necesario para resolver la ficha 1 |
 | Teoría | `teoria-2.html` | Unidades 1–7: *to be*, presente continuo y presente simple |
 | Teoría | `teoria-3.html` | Unidades 8 y 10: presente continuo o simple, y *was/were* |
+| Teoría | `teoria-4.html` | Unidades 13–16: pasado continuo, *present perfect* y *just/already/yet* |
 | Vocabulario | `vocabulario.html` | Flashcards de tienda, ropa, viajes y verbos |
 | Vocabulario | `vocabulario-3.html` | Flashcards de la ficha 3 |
 | Vocabulario | `vocabulario-4.html` | Flashcards de la ficha 4 |
